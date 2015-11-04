@@ -39,9 +39,9 @@ ResourceController *GC::resoure() {
 	}
 	return m_resourceController;
 }
-//FacebookController *GC::fb() {
-//	if (!m_fbController) {
-//		m_fbController = new FacebookController();
-//	}
-//	return m_fbController;
-//}
+FacebookController *GC::fb() {
+	if (!m_fbController) {
+		m_fbController = new FacebookController();
+	}
+	return m_fbController;
+}
