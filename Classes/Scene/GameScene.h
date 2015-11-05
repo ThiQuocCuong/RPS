@@ -3,7 +3,7 @@
 
 #include "ResultLayer.h"
 #include "GameDelegate.h"
-#include "GameController/GameController.h"
+#include "../GC/GC.h"
 
 class GameScene : public Layer, GameDelegate
 {

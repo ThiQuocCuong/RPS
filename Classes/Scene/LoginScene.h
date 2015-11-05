@@ -2,7 +2,7 @@
 #define __LOGIN_SCENE_H__
 
 #include "cocos2d.h"
-#include "../GameController/GameController.h"
+#include "../GC/GC.h"
 using namespace cocos2d;
 
 class LoginScene : public Layer

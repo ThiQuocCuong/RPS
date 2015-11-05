@@ -1,4 +1,4 @@
-#include "GameController.h"
+#include "GC.h"
 
 GC *GC::m_controller = nullptr;
 GC *GC::gI() {
