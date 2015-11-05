@@ -15,6 +15,7 @@ void FacebookController::login() {
 
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 void FacebookController::onLogin(bool isLogin, const std::string& msg) {
+	cocos2d::MessageBox("on Login %s", msg.c_str());
 	CCLOG("on Login %s", msg.c_str());
 	if (m_delegate) {
 		m_delegate->onLogin(isLogin, msg);

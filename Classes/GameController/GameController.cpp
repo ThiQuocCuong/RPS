@@ -8,10 +8,11 @@ GC *GC::gI() {
 	return m_controller;
 }
 
-GC::GC():m_lblController(nullptr),
+GC::GC() :m_lblController(nullptr),
 m_sprController(nullptr),
 m_resourceController(nullptr),
-m_btnController(nullptr){
+m_btnController(nullptr),
+m_fbController(nullptr) {
 
 }
 
