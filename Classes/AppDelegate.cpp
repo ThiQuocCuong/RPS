@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
 #include "Scene/GameScene.h"
 #include "Scene/LoadingScene.h"
-#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "PluginFacebook/PluginFacebook.h"
 #endif
 
@@ -39,7 +39,7 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
-#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 	sdkbox::PluginFacebook::init();
 #endif
     // initialize director

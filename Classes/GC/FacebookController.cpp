@@ -20,11 +20,18 @@ void FacebookController::onLogin(bool isLogin, const std::string& msg) {
 	if (m_delegate) {
 		m_delegate->onLogin(isLogin, msg);
 	}
+    if(isLogin) {
+        sdkbox::PluginFacebook::requestReadPermissions({FB_PERM_READ_PUBLIC_PROFILE, FB_PERM_READ_USER_FRIENDS});
+    }
 }
 void FacebookController::onPermission(bool isLogin, const std::string& msg) {
 	if (m_delegate) {
 		m_delegate->onPermission(isLogin, msg);
 	}
+    if(isLogin) {
+        FBAPIParam param;
+        sdkbox::PluginFacebook::requestInvitableFriends(param);
+    }
 }
 void FacebookController::onAPI(const std::string& tag, const std::string& jsonData) {
 	if (m_delegate) {
@@ -47,11 +54,19 @@ void FacebookController::onSharedCancel() {
 	}
 }
 
-void FacebookController::onFetchFriends(bool ok, const std::string & msg){};
-void FacebookController::onRequestInvitableFriends(const FBInvitableFriendsInfo & invitable_friends_and_pagination_json_as_string){};
+void FacebookController::onFetchFriends(bool ok, const std::string & msg){
+    std::vector<FBGraphUser> fr = sdkbox::PluginFacebook::getFriends();
+    CCLOG("on getFriends %s", msg.c_str());
+}
+void FacebookController::onRequestInvitableFriends(const FBInvitableFriendsInfo & invitable_friends_and_pagination_json_as_string){
+    FBInvitableFriendsInfo a = invitable_friends_and_pagination_json_as_string;
+  
+}
 void FacebookController::onInviteFriendsWithInviteIdsResult(bool result,
 	const std::string & description){};
-void FacebookController::onInviteFriendsResult(bool result, const std::string & description){};
+void FacebookController::onInviteFriendsResult(bool result, const std::string & description){
+
+};
 void FacebookController::onGetUserInfo(const FBGraphUser & userInfo){};
 #endif
 

@@ -89,7 +89,7 @@ static AppDelegate s_sharedApplication;
 
     app->run();
 
-    return ret;
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application
