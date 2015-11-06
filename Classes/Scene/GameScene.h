@@ -2,12 +2,13 @@
 #define __GAME_SCENE_H__
 
 #include "ResultLayer.h"
+#include "FriendListLayer.h"
 #include "GameDelegate.h"
-#include "../GC/GC.h"
 
-class GameScene : public Layer, GameDelegate
+class GameScene : public Layer, GameDelegate, FacebookDelegate
 {
 	ResultLayer *m_resultLayer;
+    FriendListLayer *m_frendListLayer;
 	Label *m_lblCountDown;
 	int m_countDown;
 	Label *m_lblUser1Name;
@@ -24,6 +25,21 @@ class GameScene : public Layer, GameDelegate
 
 	//delegate
 	void onReplay();
+    void onReturnToMenu();
+    
+    //fb Delegate
+    void onLogin(bool isLogin, const std::string& msg);
+    void onPermission(bool isLogin, const std::string& msg);
+    void onAPI(const std::string& tag, const std::string& jsonData);
+    void onSharedSuccess(const std::string& message);
+    void onSharedFailed(const std::string& message);
+    void onSharedCancel();
+    void onFetchFriends(bool ok, const std::string & msg);
+    //virtual void onRequestInvitableFriends(const FBInvitableFriendsInfo & invitable_friends_and_pagination_json_as_string) =0;
+    void onInviteFriendsWithInviteIdsResult(bool result,
+                                            const std::string & description);
+    void onInviteFriendsResult(bool result, const std::string & description);
+    //virtual void onGetUserInfo(const FBGraphUser & userInfo) = 0;
 public:
     static Scene* createScene();
 

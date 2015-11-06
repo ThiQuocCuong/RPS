@@ -28,7 +28,7 @@ bool ResultLayer::init()
 	btnMenu->setPosition(panel->getPosition() + Point(-panel->getContentSize().width / 4.0f, 0));
 	btnMenu->addTouchEventListener([&](Ref *sender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED && m_delegate) {
-			m_delegate->onReplay();
+			m_delegate->onReturnToMenu();
 		}
 	});
 

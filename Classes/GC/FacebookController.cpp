@@ -13,6 +13,33 @@ void FacebookController::login() {
 #endif
 }
 
+void FacebookController::logout() {
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    sdkbox::PluginFacebook::logout();
+#endif
+}
+
+bool FacebookController::isLoggedIn(){
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    return sdkbox::PluginFacebook::isLoggedIn();
+#endif
+}
+
+void FacebookController::requestInvitableFriends(std::map<std::string, std::string> params) {
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    sdkbox::PluginFacebook::requestInvitableFriends(params);
+#endif
+}
+
+void FacebookController::api(const std::string& path,
+         const std::string& method,
+         std::map<std::string, std::string> params,
+         const std::string& tag) {
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    sdkbox::PluginFacebook::api(path, method, params, tag);
+#endif
+}
+
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 void FacebookController::onLogin(bool isLogin, const std::string& msg) {
 	cocos2d::MessageBox("on Login %s", msg.c_str());
@@ -65,7 +92,6 @@ void FacebookController::onRequestInvitableFriends(const FBInvitableFriendsInfo 
 void FacebookController::onInviteFriendsWithInviteIdsResult(bool result,
 	const std::string & description){};
 void FacebookController::onInviteFriendsResult(bool result, const std::string & description){
-
 };
 void FacebookController::onGetUserInfo(const FBGraphUser & userInfo){};
 #endif

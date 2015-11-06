@@ -3,5 +3,6 @@
 class GameDelegate {
 public:
 	virtual void onReplay() = 0;
+    virtual void onReturnToMenu() = 0;
 };
 #endif

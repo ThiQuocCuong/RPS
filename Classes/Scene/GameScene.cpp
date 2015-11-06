@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "LoginScene.h"
 
 #define TAG_BTN_ROCK 1
 #define TAG_BTN_PAPER 2
@@ -15,11 +16,14 @@ Scene* GameScene::createScene()
     // 'layer' is an autorelease object
 	auto layer = GameScene::create();
 	auto result = ResultLayer::create();
+    auto friendList = FriendListLayer::create();
+    
 	result->setDelegate(layer);
     // add layer as a child to scene
     scene->addChild(layer);
 	scene->addChild(result);
 	layer->m_resultLayer = result;
+    layer->m_frendListLayer = friendList;
 
     // return the scene
     return scene;
@@ -138,6 +142,8 @@ bool GameScene::init()
 	m_countDown = MAX_COUNT_DOWN;
 	scheduleUpdate();
 	startNewRound();
+    
+    GC::gI()->fb()->setDelegate(this);
 
 	//test Source Tree
     return true;
@@ -248,4 +254,39 @@ BattleResult GameScene::getResult(int user1Result, int user2Result) {
 void GameScene::onReplay() {
 	m_resultLayer->setVisible(false);
 	startNewRound();
+}
+
+void GameScene::onReturnToMenu() {
+    Director::getInstance()->replaceScene(LoginScene::createScene());
+}
+
+/*FacebookDelegate*/
+void GameScene::onLogin(bool isLogin, const std::string& msg) {
+    
+}
+void GameScene::onPermission(bool isLogin, const std::string& msg) {
+    
+}
+void GameScene::onAPI(const std::string& tag, const std::string& jsonData) {
+    
+}
+void GameScene::onSharedSuccess(const std::string& message) {
+    
+}
+void GameScene::onSharedFailed(const std::string& message) {
+    
+}
+void GameScene::onSharedCancel() {
+    
+}
+void GameScene::onFetchFriends(bool ok, const std::string & msg) {
+    
+}
+//virtual void onRequestInvitableFriends(const FBInvitableFriendsInfo & invitable_friends_and_pagination_json_as_string) =0;
+void GameScene::onInviteFriendsWithInviteIdsResult(bool result,
+                                                   const std::string & description) {
+    
+}
+void GameScene::onInviteFriendsResult(bool result, const std::string & description) {
+    
 }

@@ -22,9 +22,9 @@ public:
 	//virtual void onGetUserInfo(const FBGraphUser & userInfo) = 0;
 };
 
-class FacebookController	
+class FacebookController
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	:public sdkbox::FacebookListener 
+	:public sdkbox::FacebookListener
 #endif
 {
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -46,6 +46,13 @@ public:
 	FacebookController();
 	void setDelegate(FacebookDelegate *del);
 	void login();
+    void logout();
+    bool isLoggedIn();
+    void requestInvitableFriends(std::map<std::string, std::string> params);
+    void api(const std::string& path,
+                    const std::string& method,
+                    std::map<std::string, std::string> params,
+                    const std::string& tag);
 };
 
 #endif // __LABEL_CONTROLLER_H__

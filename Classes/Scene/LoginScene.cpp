@@ -107,11 +107,16 @@ void LoginScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 			break;
 		}
 		case TAG_BTN_LOGIN_2:{
-			Director::getInstance()->replaceScene(GameScene::createScene());
+            GC::gI()->fb()->logout();
+			//Director::getInstance()->replaceScene(GameScene::createScene());
 			break;
 		}
 		case TAG_BTN_REGISTER:{
-			GC::gI()->fb()->login();
+            if(!GC::gI()->fb()->isLoggedIn()) {
+                GC::gI()->fb()->login();
+            } else {
+                Director::getInstance()->replaceScene(GameScene::createScene());
+            }
 			break;
 		}
 		default:
