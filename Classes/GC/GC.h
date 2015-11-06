@@ -1,7 +1,6 @@
 #ifndef __GAME_CONTROLLER_H__
 #define __GAME_CONTROLLER_H__
 
-#include "cocos2d.h"
 #include "SpriteController.h"
 #include "ResourceController.h"
 #include "ButtonController.h"

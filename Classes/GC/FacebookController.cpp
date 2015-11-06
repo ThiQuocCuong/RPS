@@ -23,6 +23,7 @@ bool FacebookController::isLoggedIn(){
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     return sdkbox::PluginFacebook::isLoggedIn();
 #endif
+	return true;
 }
 
 void FacebookController::requestInvitableFriends(std::map<std::string, std::string> params) {

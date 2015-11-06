@@ -1,5 +1,8 @@
 #include "LoginScene.h"
 #include "GameScene.h"
+#include "MenuScene.h"
+using namespace cocos2d;
+using namespace ui;
 
 #define TAG_BTN_LOGIN 1
 #define TAG_BTN_LOGIN_2 2

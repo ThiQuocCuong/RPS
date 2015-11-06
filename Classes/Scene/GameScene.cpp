@@ -22,6 +22,7 @@ Scene* GameScene::createScene()
     // add layer as a child to scene
     scene->addChild(layer);
 	scene->addChild(result);
+	scene->addChild(friendList);
 	layer->m_resultLayer = result;
     layer->m_frendListLayer = friendList;
 
