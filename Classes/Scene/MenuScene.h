@@ -1,10 +1,13 @@
 #ifndef __MENU_SCENE_H__
 #define __MENU_SCENE_H__
 
-#include "../GC/GC.h"
+#include "Layer/FriendListLayer.h"
+#include "Layer/SelectRoomLayer.h"
 
 class MenuScene : public cocos2d::Layer
 {
+	FriendListLayer *m_frendListLayer;
+	SelectRoomLayer *m_selectRoomLayer;
 	cocos2d::Sprite *m_avarta;
 	cocos2d::Label *m_lblUserInfo;
 	cocos2d::Label *m_lblHeart;

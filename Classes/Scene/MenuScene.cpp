@@ -2,19 +2,6 @@
 #include "GameScene.h"
 #include "LoginScene.h"
 
-enum class MenuButton {
-	SHOP = 0,
-	FRIEND,
-	SETTING,
-	LEADER_BOARD,
-	WITH_FRIEND,
-	CREATE_ROOM,
-	JOIN_ROOM,
-	MAIL,
-	MONEY,
-	HEART
-};
-
 Scene* MenuScene::createScene()
 {
     // 'scene' is an autorelease object
@@ -22,8 +9,16 @@ Scene* MenuScene::createScene()
     
     // 'layer' is an autorelease object
 	auto layer = MenuScene::create();
+	auto friendList = FriendListLayer::create();
+	auto selectRoom = SelectRoomLayer::create();
+
     // add layer as a child to scene
-    scene->addChild(layer);
+	scene->addChild(layer);
+	scene->addChild(friendList);
+	scene->addChild(selectRoom);
+
+	layer->m_frendListLayer = friendList;
+	layer->m_selectRoomLayer = selectRoom;
 
     // return the scene
     return scene;
@@ -61,25 +56,25 @@ bool MenuScene::init()
 	float offsetBtnX = (ws.width - 4 * btnFriend->getContentSize().width) / 5.0f;
 
 	btnFriend->setPosition(Point(ws.width / 2.0f + btnFriend->getContentSize().width / 2.0f + offsetBtnX/2.0f, btnFriend->getContentSize().height / 2.0f + offset));
-	btnFriend->setTag((int)MenuButton::FRIEND);
+	btnFriend->setTag((int)MyButtonEvent::FRIEND);
 	btnFriend->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnLeaderBoard = GC::gI()->btn()->create("btn_leader_board.png");
 	addChild(btnLeaderBoard);
 	btnLeaderBoard->setPosition(Point(ws.width / 2.0f - btnLeaderBoard->getContentSize().width / 2.0f - offsetBtnX/2.0f, btnFriend->getPositionY()));
-	btnLeaderBoard->setTag((int)MenuButton::LEADER_BOARD);
+	btnLeaderBoard->setTag((int)MyButtonEvent::LEADER_BOARD);
 	btnLeaderBoard->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnSetting = GC::gI()->btn()->create("btn_setting.png");
 	addChild(btnSetting);
 	btnSetting->setPosition(btnFriend->getPosition() + Point(btnFriend->getContentSize().width / 2.0f + offsetBtnX + btnSetting->getContentSize().width / 2.0f, 0));
-	btnSetting->setTag((int)MenuButton::SETTING);
+	btnSetting->setTag((int)MyButtonEvent::SETTING);
 	btnSetting->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnShop = GC::gI()->btn()->create("btn_shop.png");
 	addChild(btnShop);
 	btnShop->setPosition(btnLeaderBoard->getPosition() + Point(-btnLeaderBoard->getContentSize().width / 2.0f - btnShop->getContentSize().width / 2.0f - offsetBtnX, 0));
-	btnShop->setTag((int)MenuButton::SHOP);
+	btnShop->setTag((int)MyButtonEvent::SHOP);
 	btnShop->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnWithFriend = GC::gI()->btn()->create("btn_green.png");
@@ -89,7 +84,7 @@ bool MenuScene::init()
 	btnWithFriend->setPosition(Point(ws.width / 2.0f, btnFriend->getPositionY() + btnFriend->getContentSize().height / 2.0f + offset + btnWithFriend->getContentSize().height / 2.0f));
 	btnWithFriend->setTitleText("With Friend");
 	btnWithFriend->setTitleFontSize(30);
-	btnWithFriend->setTag((int)MenuButton::WITH_FRIEND);
+	btnWithFriend->setTag((int)MyButtonEvent::WITH_FRIEND);
 	btnWithFriend->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnJoinRoom = GC::gI()->btn()->create("btn_green.png");
@@ -99,7 +94,7 @@ bool MenuScene::init()
 	btnJoinRoom->setPosition(btnWithFriend->getPosition() + Point(0, btnWithFriend->getContentSize().height + offset));
 	btnJoinRoom->setTitleText("Join Room");
 	btnJoinRoom->setTitleFontSize(30);
-	btnJoinRoom->setTag((int)MenuButton::JOIN_ROOM);
+	btnJoinRoom->setTag((int)MyButtonEvent::JOIN_ROOM);
 	btnJoinRoom->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnCreateRoom = GC::gI()->btn()->create("btn_green.png");
@@ -109,7 +104,7 @@ bool MenuScene::init()
 	btnCreateRoom->setPosition(btnJoinRoom->getPosition() + Point(0, btnJoinRoom->getContentSize().height + offset));
 	btnCreateRoom->setTitleText("Create Room");
 	btnCreateRoom->setTitleFontSize(30);
-	btnCreateRoom->setTag((int)MenuButton::CREATE_ROOM);
+	btnCreateRoom->setTag((int)MyButtonEvent::CREATE_ROOM);
 	btnCreateRoom->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	m_avarta = Sprite::createWithSpriteFrameName("avarta_3.png");
@@ -128,7 +123,7 @@ bool MenuScene::init()
 	btnMoney->setContentSize(Size(150, 50));
 	btnMoney->setPosition(Point(btnSetting->getPositionX() + btnSetting->getContentSize().width / 2.0f - btnMoney->getContentSize().width / 2.0f,
 		ws.height - btnMoney->getContentSize().height/2.0f - offset/2.0f));
-	btnMoney->setTag((int)MenuButton::MONEY);
+	btnMoney->setTag((int)MyButtonEvent::MONEY);
 	btnMoney->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Sprite *sprCash = Sprite::createWithSpriteFrameName("icon_cash.png");
@@ -145,7 +140,7 @@ bool MenuScene::init()
 	btnHeart->setScale9Enabled(true);
 	btnHeart->setContentSize(Size(150, 50));
 	btnHeart->setPosition(btnMoney->getPosition() + Point(-btnMoney->getContentSize().width - offset/2.0f, 0));
-	btnHeart->setTag((int)MenuButton::HEART);
+	btnHeart->setTag((int)MyButtonEvent::HEART);
 	btnHeart->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Sprite *sprHeart = Sprite::createWithSpriteFrameName("icon_heart.png");
@@ -160,7 +155,7 @@ bool MenuScene::init()
 	Button *btnMail = GC::gI()->btn()->create("btn_gift.png");
 	addChild(btnMail);
 	btnMail->setPosition(Point(offset + btnMail->getContentSize().width, ws.height - btnMail->getContentSize().height/2.0f - btnHeart->getContentSize().height/2.0f));
-	btnMail->setTag((int)MenuButton::MAIL);
+	btnMail->setTag((int)MyButtonEvent::MAIL);
 	btnMail->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	return true;
@@ -175,28 +170,30 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 		break;
 	case cocos2d::ui::Widget::TouchEventType::ENDED: {
 		Button *btn = (Button*)sender;
-		MenuButton tag = (MenuButton)btn->getTag();
+		MyButtonEvent tag = (MyButtonEvent)btn->getTag();
 		switch (tag)
 		{
-		case MenuButton::SHOP:
+		case MyButtonEvent::SHOP:
 			break;
-		case MenuButton::FRIEND:
+		case MyButtonEvent::FRIEND:
 			break;
-		case MenuButton::SETTING:
+		case MyButtonEvent::SETTING:
 			break;
-		case MenuButton::LEADER_BOARD:
+		case MyButtonEvent::LEADER_BOARD:
 			break;
-		case MenuButton::WITH_FRIEND:
+		case MyButtonEvent::WITH_FRIEND:
 			break;
-		case MenuButton::CREATE_ROOM:
+		case MyButtonEvent::CREATE_ROOM:
 			break;
-		case MenuButton::JOIN_ROOM:
+		case MyButtonEvent::JOIN_ROOM: {
+			m_selectRoomLayer->show();
 			break;
-		case MenuButton::MAIL:
+		}
+		case MyButtonEvent::MAIL:
 			break;
-		case MenuButton::MONEY:
+		case MyButtonEvent::MONEY:
 			break;
-		case MenuButton::HEART:
+		case MyButtonEvent::HEART:
 			break;
 		default:
 			break;

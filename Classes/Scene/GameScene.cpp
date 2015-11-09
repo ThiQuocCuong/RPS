@@ -16,18 +16,13 @@ Scene* GameScene::createScene()
     // 'layer' is an autorelease object
 	auto layer = GameScene::create();
 	auto result = ResultLayer::create();
-    auto friendList = FriendListLayer::create();
-	auto selectRoom = SelectRoomLayer::create();
     
 	result->setDelegate(layer);
     // add layer as a child to scene
     scene->addChild(layer);
 	scene->addChild(result);
-	//scene->addChild(friendList);
-	scene->addChild(selectRoom);
 
 	layer->m_resultLayer = result;
-    layer->m_frendListLayer = friendList;
 
     // return the scene
     return scene;

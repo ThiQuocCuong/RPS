@@ -2,13 +2,10 @@
 #define __GAME_SCENE_H__
 
 #include "Layer/ResultLayer.h"
-#include "Layer/FriendListLayer.h"
-#include "Layer/SelectRoomLayer.h"
 
 class GameScene : public Layer, GameDelegate, FacebookDelegate
 {
 	ResultLayer *m_resultLayer;
-    FriendListLayer *m_frendListLayer;
 	Label *m_lblCountDown;
 	int m_countDown;
 	Label *m_lblUser1Name;

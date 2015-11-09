@@ -118,7 +118,7 @@ void LoginScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
             if(!GC::gI()->fb()->isLoggedIn()) {
                 GC::gI()->fb()->login();
             } else {
-                Director::getInstance()->replaceScene(GameScene::createScene());
+                Director::getInstance()->replaceScene(MenuScene::createScene());
             }
 			break;
 		}

@@ -4,6 +4,22 @@
 #include "cocos-ext.h"
 #define FNT_TTF "fonts/arial.ttf"
 
+enum class MyButtonEvent {
+	SHOP = 0,
+	FRIEND,
+	SETTING,
+	LEADER_BOARD,
+	WITH_FRIEND,
+	CREATE_ROOM,
+	JOIN_ROOM,
+	MAIL,
+	MONEY,
+	HEART,
+	PAUSE,
+	BACK,
+	NEXT
+};
+
 enum class BattleResult {
 	WIN = 0,
 	LOSE,
