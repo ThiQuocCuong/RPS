@@ -1,6 +1,9 @@
 #include "LoadingScene.h"
 #include "GameScene.h"
 #include "LoginScene.h"
+using namespace cocos2d;
+using namespace ui;
+using namespace std;
 
 Scene* LoadingScene::createScene()
 {

@@ -16,14 +16,13 @@ Scene* GameScene::createScene()
     // 'layer' is an autorelease object
 	auto layer = GameScene::create();
 	auto result = ResultLayer::create();
-    auto friendList = FriendListLayer::create();
     
 	result->setDelegate(layer);
     // add layer as a child to scene
     scene->addChild(layer);
 	scene->addChild(result);
+
 	layer->m_resultLayer = result;
-    layer->m_frendListLayer = friendList;
 
     // return the scene
     return scene;
@@ -45,13 +44,13 @@ bool GameScene::init()
 
 	float offset = 20;
 
-	Scale9Sprite *borderTop = Scale9Sprite::createWithSpriteFrameName("ui_border_top_1.png");
+	ui::Scale9Sprite *borderTop = ui::Scale9Sprite::createWithSpriteFrameName("ui_border_top_1.png");
 	addChild(borderTop);
 	borderTop->setContentSize(Size(ws.width, borderTop->getContentSize().height));
 	borderTop->setAnchorPoint(Point(0.5, 1));
 	borderTop->setPosition(ws.width / 2.0f, ws.height);
 
-	Scale9Sprite *borderBot = Scale9Sprite::createWithSpriteFrameName("ui_border_bot_2.png");
+	ui::Scale9Sprite *borderBot = ui::Scale9Sprite::createWithSpriteFrameName("ui_border_bot_2.png");
 	addChild(borderBot);
 	borderBot->setContentSize(Size(ws.width, borderBot->getContentSize().height));
 	borderBot->setAnchorPoint(Point(0.5, 0));
@@ -66,12 +65,12 @@ bool GameScene::init()
 	addChild(m_lblCountDown);
 	m_lblCountDown->setPosition(borderMid->getPosition() + Point(0, -borderMid->getContentSize().height / 2.0f));
 
-	Scale9Sprite *panel1 = Scale9Sprite::createWithSpriteFrameName("ui_panel.png");
+	ui::Scale9Sprite *panel1 = ui::Scale9Sprite::createWithSpriteFrameName("ui_panel.png");
 	addChild(panel1);
 	panel1->setContentSize(Size(0.4*ws.width, 0.7*(ws.height - borderTop->getContentSize().height - borderBot->getContentSize().height)));
 	panel1->setPosition(0.25*ws.width, 0.5*ws.height);
 
-	Scale9Sprite *panel2 = Scale9Sprite::createWithSpriteFrameName("ui_panel.png");
+	ui::Scale9Sprite *panel2 = ui::Scale9Sprite::createWithSpriteFrameName("ui_panel.png");
 	addChild(panel2);
 	panel2->setContentSize(panel1->getContentSize());
 	panel2->setPosition(0.75*ws.width, 0.5*ws.height);
@@ -145,6 +144,9 @@ bool GameScene::init()
     
     GC::gI()->fb()->setDelegate(this);
 
+	string json = "{\"test\":{\"id\":0,\"name\":\"wonka\"}}";
+	GC::gI()->json()->read(json);
+	string str = GC::gI()->json()->getString("test", "name");
 	//test Source Tree
     return true;
 }

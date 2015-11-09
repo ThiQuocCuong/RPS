@@ -1,4 +1,6 @@
 #include "ResourceController.h"
+using namespace cocos2d;
+using namespace std;
 
 void ResourceController::loadResource(vector<string> paths) {
 	m_percent = 0;
