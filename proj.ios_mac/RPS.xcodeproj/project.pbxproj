@@ -44,6 +44,9 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		979263131BF03A08009DC023 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979263101BF03A08009DC023 /* FBSDKCoreKit.framework */; };
+		979263141BF03A08009DC023 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979263111BF03A08009DC023 /* FBSDKLoginKit.framework */; };
+		979263151BF03A08009DC023 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979263121BF03A08009DC023 /* FBSDKShareKit.framework */; };
 		979585AC1BEAF9A400CC947A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979585AB1BEAF9A400CC947A /* Foundation.framework */; };
 		979585AE1BEAF9C100CC947A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979585AD1BEAF9C100CC947A /* UIKit.framework */; };
 		979585B01BEAF9EC00CC947A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979585AF1BEAF9EC00CC947A /* CoreMotion.framework */; };
@@ -58,12 +61,24 @@
 		979586711BEB135A00CC947A /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 979586621BEB135A00CC947A /* GameScene.cpp */; };
 		979586721BEB135A00CC947A /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 979586641BEB135A00CC947A /* LoadingScene.cpp */; };
 		979586731BEB135A00CC947A /* LoginScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 979586661BEB135A00CC947A /* LoginScene.cpp */; };
-		979586741BEB135A00CC947A /* ResultLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 979586681BEB135A00CC947A /* ResultLayer.cpp */; };
-		9795867B1BEB3A7800CC947A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979586761BEB3A7800CC947A /* FBSDKCoreKit.framework */; };
-		9795867C1BEB3A7800CC947A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979586771BEB3A7800CC947A /* FBSDKLoginKit.framework */; };
-		9795867D1BEB3A7800CC947A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979586781BEB3A7800CC947A /* FBSDKShareKit.framework */; };
 		9795867E1BEB3A7800CC947A /* PluginFacebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979586791BEB3A7800CC947A /* PluginFacebook.framework */; };
 		9795867F1BEB3A7800CC947A /* sdkbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9795867A1BEB3A7800CC947A /* sdkbox.framework */; };
+		9795869C1BEB4B2700CC947A /* sdkbox_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 979586961BEB4B2700CC947A /* sdkbox_config.json */; };
+		9795869D1BEB4B2700CC947A /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 979586971BEB4B2700CC947A /* CloseNormal.png */; };
+		9795869E1BEB4B2700CC947A /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 979586981BEB4B2700CC947A /* CloseSelected.png */; };
+		9795869F1BEB4B2700CC947A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 979586991BEB4B2700CC947A /* fonts */; };
+		979586A01BEB4B2700CC947A /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 9795869A1BEB4B2700CC947A /* HelloWorld.png */; };
+		979586A11BEB4B2700CC947A /* res in Resources */ = {isa = PBXBuildFile; fileRef = 9795869B1BEB4B2700CC947A /* res */; };
+		97E8532B1BF08ACF0050E805 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853271BF08ACF0050E805 /* MenuScene.cpp */; };
+		97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532D1BF08AE30050E805 /* FriendCell.cpp */; };
+		97E853431BF08AE30050E805 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532F1BF08AE30050E805 /* GameModel.cpp */; };
+		97E853441BF08AE30050E805 /* MyCustomCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853311BF08AE30050E805 /* MyCustomCell.cpp */; };
+		97E853451BF08AE30050E805 /* RoomCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853331BF08AE30050E805 /* RoomCell.cpp */; };
+		97E853491BF08AE30050E805 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8533C1BF08AE30050E805 /* GameLayer.cpp */; };
+		97E8534A1BF08AE30050E805 /* ResultLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8533E1BF08AE30050E805 /* ResultLayer.cpp */; };
+		97E8534B1BF08AE30050E805 /* SelectRoomLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853401BF08AE30050E805 /* SelectRoomLayer.cpp */; };
+		97E8534E1BF08B650050E805 /* JsonController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8534C1BF08B650050E805 /* JsonController.cpp */; };
+		97E853571BF08C2B0050E805 /* FriendListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853551BF08C2B0050E805 /* FriendListLayer.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -145,6 +160,9 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		979263101BF03A08009DC023 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../CocosWorkSpace/FacebookSDKs-iOS-20151026/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		979263111BF03A08009DC023 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../CocosWorkSpace/FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		979263121BF03A08009DC023 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../CocosWorkSpace/FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		979585AB1BEAF9A400CC947A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		979585AD1BEAF9C100CC947A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		979585AF1BEAF9EC00CC947A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
@@ -171,13 +189,34 @@
 		979586651BEB135A00CC947A /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
 		979586661BEB135A00CC947A /* LoginScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginScene.cpp; sourceTree = "<group>"; };
 		979586671BEB135A00CC947A /* LoginScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScene.h; sourceTree = "<group>"; };
-		979586681BEB135A00CC947A /* ResultLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResultLayer.cpp; sourceTree = "<group>"; };
-		979586691BEB135A00CC947A /* ResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultLayer.h; sourceTree = "<group>"; };
-		979586761BEB3A7800CC947A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		979586771BEB3A7800CC947A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		979586781BEB3A7800CC947A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		979586791BEB3A7800CC947A /* PluginFacebook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PluginFacebook.framework; path = "../../../../CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios/PluginFacebook.framework"; sourceTree = "<group>"; };
 		9795867A1BEB3A7800CC947A /* sdkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sdkbox.framework; path = "../../../../CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios/sdkbox.framework"; sourceTree = "<group>"; };
+		979586961BEB4B2700CC947A /* sdkbox_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sdkbox_config.json; path = ../Resources/sdkbox_config.json; sourceTree = "<group>"; };
+		979586971BEB4B2700CC947A /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseNormal.png; path = ../Resources/CloseNormal.png; sourceTree = "<group>"; };
+		979586981BEB4B2700CC947A /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseSelected.png; path = ../Resources/CloseSelected.png; sourceTree = "<group>"; };
+		979586991BEB4B2700CC947A /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../Resources/fonts; sourceTree = "<group>"; };
+		9795869A1BEB4B2700CC947A /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelloWorld.png; path = ../Resources/HelloWorld.png; sourceTree = "<group>"; };
+		9795869B1BEB4B2700CC947A /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../Resources/res; sourceTree = "<group>"; };
+		97E853271BF08ACF0050E805 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
+		97E853281BF08ACF0050E805 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		97E8532D1BF08AE30050E805 /* FriendCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendCell.cpp; sourceTree = "<group>"; };
+		97E8532E1BF08AE30050E805 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		97E8532F1BF08AE30050E805 /* GameModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameModel.cpp; sourceTree = "<group>"; };
+		97E853301BF08AE30050E805 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		97E853311BF08AE30050E805 /* MyCustomCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyCustomCell.cpp; sourceTree = "<group>"; };
+		97E853321BF08AE30050E805 /* MyCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCell.h; sourceTree = "<group>"; };
+		97E853331BF08AE30050E805 /* RoomCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoomCell.cpp; sourceTree = "<group>"; };
+		97E853341BF08AE30050E805 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCell.h; sourceTree = "<group>"; };
+		97E8533C1BF08AE30050E805 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
+		97E8533D1BF08AE30050E805 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		97E8533E1BF08AE30050E805 /* ResultLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResultLayer.cpp; sourceTree = "<group>"; };
+		97E8533F1BF08AE30050E805 /* ResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultLayer.h; sourceTree = "<group>"; };
+		97E853401BF08AE30050E805 /* SelectRoomLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectRoomLayer.cpp; sourceTree = "<group>"; };
+		97E853411BF08AE30050E805 /* SelectRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoomLayer.h; sourceTree = "<group>"; };
+		97E8534C1BF08B650050E805 /* JsonController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonController.cpp; sourceTree = "<group>"; };
+		97E8534D1BF08B650050E805 /* JsonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonController.h; sourceTree = "<group>"; };
+		97E853551BF08C2B0050E805 /* FriendListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendListLayer.cpp; sourceTree = "<group>"; };
+		97E853561BF08C2B0050E805 /* FriendListLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListLayer.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -193,22 +232,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				979263141BF03A08009DC023 /* FBSDKLoginKit.framework in Frameworks */,
 				979585B01BEAF9EC00CC947A /* CoreMotion.framework in Frameworks */,
 				9795867E1BEB3A7800CC947A /* PluginFacebook.framework in Frameworks */,
 				979585AE1BEAF9C100CC947A /* UIKit.framework in Frameworks */,
 				9795867F1BEB3A7800CC947A /* sdkbox.framework in Frameworks */,
-				9795867C1BEB3A7800CC947A /* FBSDKLoginKit.framework in Frameworks */,
 				979585AC1BEAF9A400CC947A /* Foundation.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				9795867D1BEB3A7800CC947A /* FBSDKShareKit.framework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
-				9795867B1BEB3A7800CC947A /* FBSDKCoreKit.framework in Frameworks */,
+				979263151BF03A08009DC023 /* FBSDKShareKit.framework in Frameworks */,
+				979263131BF03A08009DC023 /* FBSDKCoreKit.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 			);
@@ -271,6 +310,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				979586811BEB4AEE00CC947A /* Resources */,
 				9795860E1BEB0BC200CC947A /* Classes */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -284,9 +324,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				979586761BEB3A7800CC947A /* FBSDKCoreKit.framework */,
-				979586771BEB3A7800CC947A /* FBSDKLoginKit.framework */,
-				979586781BEB3A7800CC947A /* FBSDKShareKit.framework */,
+				979263101BF03A08009DC023 /* FBSDKCoreKit.framework */,
+				979263111BF03A08009DC023 /* FBSDKLoginKit.framework */,
+				979263121BF03A08009DC023 /* FBSDKShareKit.framework */,
 				979586791BEB3A7800CC947A /* PluginFacebook.framework */,
 				9795867A1BEB3A7800CC947A /* sdkbox.framework */,
 				979585AF1BEAF9EC00CC947A /* CoreMotion.framework */,
@@ -374,6 +414,8 @@
 		979586511BEB135A00CC947A /* GC */ = {
 			isa = PBXGroup;
 			children = (
+				97E8534C1BF08B650050E805 /* JsonController.cpp */,
+				97E8534D1BF08B650050E805 /* JsonController.h */,
 				979586521BEB135A00CC947A /* ButtonController.cpp */,
 				979586531BEB135A00CC947A /* ButtonController.h */,
 				979586541BEB135A00CC947A /* FacebookController.cpp */,
@@ -394,6 +436,10 @@
 		9795865F1BEB135A00CC947A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				97E8532C1BF08AE30050E805 /* Cell */,
+				97E853351BF08AE30050E805 /* Layer */,
+				97E853271BF08ACF0050E805 /* MenuScene.cpp */,
+				97E853281BF08ACF0050E805 /* MenuScene.h */,
 				979586601BEB135A00CC947A /* GameDelegate.cpp */,
 				979586611BEB135A00CC947A /* GameDelegate.h */,
 				979586621BEB135A00CC947A /* GameScene.cpp */,
@@ -402,11 +448,52 @@
 				979586651BEB135A00CC947A /* LoadingScene.h */,
 				979586661BEB135A00CC947A /* LoginScene.cpp */,
 				979586671BEB135A00CC947A /* LoginScene.h */,
-				979586681BEB135A00CC947A /* ResultLayer.cpp */,
-				979586691BEB135A00CC947A /* ResultLayer.h */,
 			);
 			name = Scene;
 			path = ../Classes/Scene;
+			sourceTree = "<group>";
+		};
+		979586811BEB4AEE00CC947A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				979586961BEB4B2700CC947A /* sdkbox_config.json */,
+				979586971BEB4B2700CC947A /* CloseNormal.png */,
+				979586981BEB4B2700CC947A /* CloseSelected.png */,
+				979586991BEB4B2700CC947A /* fonts */,
+				9795869A1BEB4B2700CC947A /* HelloWorld.png */,
+				9795869B1BEB4B2700CC947A /* res */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		97E8532C1BF08AE30050E805 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				97E8532D1BF08AE30050E805 /* FriendCell.cpp */,
+				97E8532E1BF08AE30050E805 /* FriendCell.h */,
+				97E8532F1BF08AE30050E805 /* GameModel.cpp */,
+				97E853301BF08AE30050E805 /* GameModel.h */,
+				97E853311BF08AE30050E805 /* MyCustomCell.cpp */,
+				97E853321BF08AE30050E805 /* MyCustomCell.h */,
+				97E853331BF08AE30050E805 /* RoomCell.cpp */,
+				97E853341BF08AE30050E805 /* RoomCell.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		97E853351BF08AE30050E805 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				97E853551BF08C2B0050E805 /* FriendListLayer.cpp */,
+				97E853561BF08C2B0050E805 /* FriendListLayer.h */,
+				97E8533C1BF08AE30050E805 /* GameLayer.cpp */,
+				97E8533D1BF08AE30050E805 /* GameLayer.h */,
+				97E8533E1BF08AE30050E805 /* ResultLayer.cpp */,
+				97E8533F1BF08AE30050E805 /* ResultLayer.h */,
+				97E853401BF08AE30050E805 /* SelectRoomLayer.cpp */,
+				97E853411BF08AE30050E805 /* SelectRoomLayer.h */,
+			);
+			path = Layer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,19 +596,25 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				9795869C1BEB4B2700CC947A /* sdkbox_config.json in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				979586A01BEB4B2700CC947A /* HelloWorld.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				9795869F1BEB4B2700CC947A /* fonts in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
+				9795869D1BEB4B2700CC947A /* CloseNormal.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
+				979586A11BEB4B2700CC947A /* res in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				9795869E1BEB4B2700CC947A /* CloseSelected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,16 +634,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				9795866D1BEB135A00CC947A /* LabelController.cpp in Sources */,
+				97E8532B1BF08ACF0050E805 /* MenuScene.cpp in Sources */,
 				9795861C1BEB0BD700CC947A /* AppDelegate.cpp in Sources */,
 				979586721BEB135A00CC947A /* LoadingScene.cpp in Sources */,
 				9795866F1BEB135A00CC947A /* SpriteController.cpp in Sources */,
+				97E853571BF08C2B0050E805 /* FriendListLayer.cpp in Sources */,
+				97E853491BF08AE30050E805 /* GameLayer.cpp in Sources */,
 				9795866B1BEB135A00CC947A /* FacebookController.cpp in Sources */,
+				97E8534E1BF08B650050E805 /* JsonController.cpp in Sources */,
 				9795866E1BEB135A00CC947A /* ResourceController.cpp in Sources */,
-				979586741BEB135A00CC947A /* ResultLayer.cpp in Sources */,
+				97E8534A1BF08AE30050E805 /* ResultLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				9795866C1BEB135A00CC947A /* GC.cpp in Sources */,
+				97E853451BF08AE30050E805 /* RoomCell.cpp in Sources */,
 				979586731BEB135A00CC947A /* LoginScene.cpp in Sources */,
+				97E853431BF08AE30050E805 /* GameModel.cpp in Sources */,
+				97E853441BF08AE30050E805 /* MyCustomCell.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				97E8534B1BF08AE30050E805 /* SelectRoomLayer.cpp in Sources */,
+				97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */,
 				979586701BEB135A00CC947A /* GameDelegate.cpp in Sources */,
 				9795866A1BEB135A00CC947A /* ButtonController.cpp in Sources */,
 				979586711BEB135A00CC947A /* GameScene.cpp in Sources */,
@@ -592,6 +694,7 @@
 					"$(inherited)",
 					/Users/tunghuynh/Documents/FacebookSDK,
 					"/Volumes/Data/BTS/CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios",
+					"/Volumes/Data/BTS/CocosWorkSpace/FacebookSDKs-iOS-20151026",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -633,6 +736,7 @@
 					"$(inherited)",
 					/Users/tunghuynh/Documents/FacebookSDK,
 					"/Volumes/Data/BTS/CocosWorkSpace/sdkbox-facebook_v1.4.0.9/plugin/ios",
+					"/Volumes/Data/BTS/CocosWorkSpace/FacebookSDKs-iOS-20151026",
 				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -62,12 +62,10 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>FacebookAppID</key>
 	<string>1650431005210195</string>
 	<key>FacebookDisplayName</key>
-	<string>wtFrameWork</string>
+	<string>wtFramework</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
