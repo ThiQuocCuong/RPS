@@ -4,6 +4,10 @@
 #include "cocos-ext.h"
 #define FNT_TTF "fonts/arial.ttf"
 
+#define API_INVITABLE_FRIENDS "/me/invitable_friends"
+
+#define TAG_API_INVITE_FRIEND "tag_api_invitable"
+
 enum class MyButtonEvent {
 	SHOP = 0,
 	FRIEND,

@@ -20,6 +20,14 @@ public:
 	int m_level;
 };
 
+class FBUserModel: public Ref {
+public:
+    string m_id;
+    string m_name;
+    bool m_is_silhouette;
+    string m_imgURL;
+};
+
 class RoomModel : public Ref {
 public:
 	string m_id;

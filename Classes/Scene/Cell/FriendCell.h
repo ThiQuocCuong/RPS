@@ -18,7 +18,8 @@ public:
 	static FriendCell *create(cocos2d::Size cellSize = cocos2d::Size::ZERO);
 	virtual bool init(cocos2d::Size cellSize = cocos2d::Size::ZERO);
 	virtual cocos2d::Size getCellSize() { return m_cellSize; }
-	void setModel(UserModel *model);
+	void setModel(FBUserModel *model);
+    void setModel(UserModel *model);
 	CREATE_FUNC(FriendCell);
 };
 

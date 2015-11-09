@@ -158,6 +158,7 @@ bool MenuScene::init()
 	btnMail->setTag((int)MyButtonEvent::MAIL);
 	btnMail->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
+    GC::gI()->fb()->setDelegate(this);
 	return true;
 }
 
@@ -175,8 +176,10 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 		{
 		case MyButtonEvent::SHOP:
 			break;
-		case MyButtonEvent::FRIEND:
+            case MyButtonEvent::FRIEND: {
+                m_frendListLayer->show();
 			break;
+            }
 		case MyButtonEvent::SETTING:
 			break;
 		case MyButtonEvent::LEADER_BOARD:
@@ -205,4 +208,11 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 	default:
 		break;
 	}
+}
+
+//facebook delegate
+void MenuScene::onAPI(const std::string& tag, const std::string& jsonData) {
+    if(tag.compare(TAG_API_INVITE_FRIEND) == 0) {
+        m_frendListLayer->onReceivedInvitableFriends(jsonData);
+    }
 }

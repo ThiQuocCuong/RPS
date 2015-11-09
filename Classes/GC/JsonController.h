@@ -10,16 +10,25 @@ class JsonController
 public:
 	JsonController();
 	void read(string json);
-	int getInt(string tag);
-	string getString(string tag);
-	string getString(const rapidjson::Value& object, string tag = "");
-	int getInt(const rapidjson::Value& object, string tag = "");
-	string getString(string object, string tag = "");
-	int getInt(string object, string tag = "");
-	const rapidjson::Value& getObject(string tag = "");
+	string getString(rapidjson::Value& object, string tag = "", int index = -1);
+    string getString(rapidjson::Value& object, int index);
+    string getString(string object, string tag = "", int index = -1);
+    int getInt(rapidjson::Value& object, string tag = "", int i = -1);
+    int getInt(rapidjson::Value& object, int index);
+	int getInt(string object, string tag = "", int index = -1);
+    bool getBool(rapidjson::Value& object, string tag = "", int i = -1);
+    bool getBool(rapidjson::Value& object, int index);
+    bool getBool(string object, string tag = "", int index = -1);
+    
+    //remember to check null before call these getObject method
+    rapidjson::Value & getObject(rapidjson::Value &object, string tag = "", int index = -1);
+    rapidjson::Value & getObject(string object, string tag = "", int index = -1);
+    rapidjson::Value & getObject(rapidjson::Value &object, int index);
+    
 
-	bool isNull(const rapidjson::Value& object, string tag = "");
-	bool isNull(string object, string tag = "");
+	bool isNull(rapidjson::Value& object, string tag = "", int index = -1);
+	bool isNull(string object, string tag = "", int index = -1);
+    bool isNull(rapidjson::Value& object, int index);
 
 };
 

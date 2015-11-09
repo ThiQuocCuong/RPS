@@ -71,3 +71,7 @@ bool FriendCell::init(cocos2d::Size cellSize) {
 void FriendCell::setModel(UserModel *model) {
 	m_lblInfo->setString(StringUtils::format("Lvl %d %s", model->m_level, model->m_name.c_str()));
 }
+
+void FriendCell::setModel(FBUserModel *model) {
+    m_lblInfo->setString(StringUtils::format("%s", model->m_name.c_str()));
+}
