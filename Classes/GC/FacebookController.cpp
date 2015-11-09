@@ -37,18 +37,18 @@ void FacebookController::api(const std::string& path,
          const std::string& tag) {
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sdkbox::PluginFacebook::api(path, method, params, tag);
+
 #endif
 }
 
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 void FacebookController::onLogin(bool isLogin, const std::string& msg) {
-	cocos2d::MessageBox("on Login %s", msg.c_str());
 	CCLOG("on Login %s", msg.c_str());
 	if (m_delegate) {
 		m_delegate->onLogin(isLogin, msg);
 	}
     if(isLogin) {
-        sdkbox::PluginFacebook::requestReadPermissions({FB_PERM_READ_PUBLIC_PROFILE, FB_PERM_READ_USER_FRIENDS});
+        sdkbox::PluginFacebook::requestReadPermissions({FB_PERM_READ_PUBLIC_PROFILE, FB_PERM_READ_USER_FRIENDS,FB_PERM_READ_EMAIL});
     }
 }
 void FacebookController::onPermission(bool isLogin, const std::string& msg) {
@@ -61,6 +61,7 @@ void FacebookController::onPermission(bool isLogin, const std::string& msg) {
     }
 }
 void FacebookController::onAPI(const std::string& tag, const std::string& jsonData) {
+    CCLOG("jsonAPI %s", jsonData.c_str());
 	if (m_delegate) {
 		m_delegate->onAPI(tag, jsonData);
 	}

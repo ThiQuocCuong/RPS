@@ -11,8 +11,9 @@ bool FriendListLayer::init() {
     if(!Node::init()) {
         return false;
     }
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     std::map<std::string, std::string> params;
-    params.insert(std::pair<std::string, std::string>("limit", "50"));
-    GC::gI()->fb()->requestInvitableFriends(params);
+    GC::gI()->fb()->api("/me/invitable_friends", "GET", params, "bla_bla");
+#endif
     return true;
 }
