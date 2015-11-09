@@ -12,7 +12,8 @@ GC::GC() :m_lblController(nullptr),
 m_sprController(nullptr),
 m_resourceController(nullptr),
 m_btnController(nullptr),
-m_fbController(nullptr) {
+m_fbController(nullptr),
+m_jsonController(nullptr){
 
 }
 
@@ -45,4 +46,11 @@ FacebookController *GC::fb() {
 		m_fbController = new FacebookController();
 	}
 	return m_fbController;
+}
+
+JsonController *GC::json() {
+	if (!m_jsonController) {
+		m_jsonController = new JsonController();
+	}
+	return m_jsonController;
 }

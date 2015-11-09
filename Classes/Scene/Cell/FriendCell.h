@@ -10,7 +10,6 @@
 #define __RPS__FriendCell__
 
 #include "MyCustomCell.h"
-#include "FriendCell.h"
 
 class FriendCell : public MyCustomCell {
 	Label *m_lblInfo;

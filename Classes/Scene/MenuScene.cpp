@@ -42,13 +42,13 @@ bool MenuScene::init()
 	LayerColor *lc = LayerColor::create(Color4B(47, 121, 197, 255));
 	addChild(lc);
 
-	Scale9Sprite *borderTop = Scale9Sprite::createWithSpriteFrameName("ui_border_top_1.png");
+	ui::Scale9Sprite *borderTop = ui::Scale9Sprite::createWithSpriteFrameName("ui_border_top_1.png");
 	addChild(borderTop);
 	borderTop->setContentSize(Size(ws.width, borderTop->getContentSize().height));
 	borderTop->setAnchorPoint(Point(0.5, 1));
 	borderTop->setPosition(ws.width / 2.0f, ws.height);
 
-	Scale9Sprite *borderBot = Scale9Sprite::createWithSpriteFrameName("ui_border_bot_1.png");
+	ui::Scale9Sprite *borderBot = ui::Scale9Sprite::createWithSpriteFrameName("ui_border_bot_1.png");
 	addChild(borderBot);
 	borderBot->setContentSize(Size(ws.width, borderBot->getContentSize().height));
 	borderBot->setAnchorPoint(Point(0.5, 0));

@@ -12,11 +12,19 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 using namespace std;
+
 class UserModel: public Ref {
 public:
 	string m_id;
 	string m_name;
 	int m_level;
+};
+
+class RoomModel : public Ref {
+public:
+	string m_id;
+	string m_name;
+	int m_status;
 };
 
 #endif /* defined(__RPS__FriendListLayer__) */

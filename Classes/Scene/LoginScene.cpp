@@ -62,12 +62,12 @@ bool LoginScene::init()
 	lblPassword->setPosition(Point(ws.width / 2.0f - lblPassword->getContentSize().width - offset, ws.height / 2.0f + offset + lblPassword->getContentSize().height / 2.0f));
 	lblUserName->setPosition(lblPassword->getPosition() + Point(0, lblUserName->getContentSize().height + offset));
 
-	EditBox *boxUserName = EditBox::create(Size(ws.width / 3.0f, 50), "ui_panel_2.png", Widget::TextureResType::PLIST);
+	ui::EditBox *boxUserName = ui::EditBox::create(Size(ws.width / 3.0f, 50), "ui_panel_2.png", Widget::TextureResType::PLIST);
 	m_loginNode->addChild(boxUserName);
 	boxUserName->setAnchorPoint(Point(0, 0.5));
 	boxUserName->setPosition(Point(ws.width / 2.0f, lblUserName->getPositionY()));
 
-	EditBox *boxPassword = EditBox::create(Size(ws.width / 3.0f, 50), "ui_panel_2.png", Widget::TextureResType::PLIST);
+	ui::EditBox *boxPassword = ui::EditBox::create(Size(ws.width / 3.0f, 50), "ui_panel_2.png", Widget::TextureResType::PLIST);
 	m_loginNode->addChild(boxPassword);
 	boxPassword->setAnchorPoint(Point(0, 0.5));
 	boxPassword->setPosition(Point(ws.width / 2.0f, lblPassword->getPositionY()));

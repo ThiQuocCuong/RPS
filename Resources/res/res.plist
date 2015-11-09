@@ -277,6 +277,19 @@
                 <key>sourceSize</key>
                 <string>{32,30}</string>
             </dict>
+            <key>icon_lock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{870,969},{28,30}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{28,30}</string>
+            </dict>
             <key>paper.png</key>
             <dict>
                 <key>frame</key>
@@ -430,7 +443,7 @@
             <key>size</key>
             <string>{1007,1030}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:64335752930d29506462b1d399269197:508e232c75b77e6001b08f1c05100093:e9a6761e0eaed6cf539663e6dc49fb27$</string>
+            <string>$TexturePacker:SmartUpdate:e8e9ac76a6b69976dd74caf18208c6d4:569177e104651abdbd34849b84cb3cfa:e9a6761e0eaed6cf539663e6dc49fb27$</string>
             <key>textureFileName</key>
             <string>res.png</string>
         </dict>

@@ -6,7 +6,11 @@
 #include "ButtonController.h"
 #include "LabelController.h"
 #include "FacebookController.h"
+#include "JsonController.h"
 #include "../Prefix.h"
+using namespace cocos2d;
+using namespace extension;
+using namespace ui;
 
 class GC
 {
@@ -17,6 +21,7 @@ class GC
 	SpriteController *m_sprController;
 	ResourceController *m_resourceController;
 	FacebookController *m_fbController;
+	JsonController *m_jsonController;
 public:
 	static GC *gI();
 	LabelController *lbl();
@@ -24,6 +29,7 @@ public:
 	SpriteController *spr();
 	ResourceController *resoure();
 	FacebookController *fb();
+	JsonController *json();
 };
 
 #endif // __HELLOWORLD_SCENE_H__

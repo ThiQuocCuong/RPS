@@ -35,7 +35,7 @@ bool FriendCell::init(cocos2d::Size cellSize) {
 
 	float offset = 10;
 
-	m_bg = Scale9Sprite::createWithSpriteFrameName("ui_panel_2.png");
+	m_bg = ui::Scale9Sprite::createWithSpriteFrameName("ui_panel_2.png");
 	addChild(m_bg);
 	m_bg->setAnchorPoint(Point(0, 0.5));
 	m_bg->setOpacity(200);

@@ -1,9 +1,9 @@
 #ifndef __GAME_SCENE_H__
 #define __GAME_SCENE_H__
 
-#include "ResultLayer.h"
-#include "FriendListLayer.h"
-#include "GameDelegate.h"
+#include "Layer/ResultLayer.h"
+#include "Layer/FriendListLayer.h"
+#include "Layer/SelectRoomLayer.h"
 
 class GameScene : public Layer, GameDelegate, FacebookDelegate
 {

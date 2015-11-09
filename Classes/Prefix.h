@@ -10,4 +10,10 @@ enum class BattleResult {
 	EQUAL
 };
 
+enum class RoomStatus {
+	PLAYING = 0,
+	WAITING
+};
+
+
 #endif
