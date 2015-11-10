@@ -14,7 +14,7 @@ bool FriendListLayer::init() {
     }
     std::map<std::string, std::string> params;
     //params.insert(std::pair<std::string, std::string>("limit", "50"));
-    //params.insert(std::pair<std::string, std::string>("fields", "50"));
+    params.insert(std::pair<std::string, std::string>("fields","id,name,picture.width(160).height(160)"));
     GC::gI()->fb()->api(API_INVITABLE_FRIENDS, "GET", params, TAG_API_INVITE_FRIEND);
     
     
@@ -70,6 +70,7 @@ void FriendListLayer::onReceivedInvitableFriends(string json) {
                     }
                 }
             }
+            
             m_friendModels.pushBack(model);
             model->release();
         }
