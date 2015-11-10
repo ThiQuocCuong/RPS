@@ -20,7 +20,21 @@ bool GameLayer::init()
 	btnLockTouch->setContentSize(Director::getInstance()->getWinSize());
 	btnLockTouch->setTouchEnabled(true);
 	btnLockTouch->setEnabled(true);
+
+	Size ws = Director::getInstance()->getWinSize();
+	m_btnBack = GC::gI()->btn()->create("btn_back.png");
+	addChild(m_btnBack);
+	m_btnBack->setPosition(Point(m_btnBack->getContentSize().width, ws.height - 0.75*m_btnBack->getContentSize().height));
+	m_btnBack->setTag((int)MyButtonEvent::BACK);
+	m_btnBack->setVisible(false);
+	m_btnBack->addTouchEventListener([=](Ref *sender, Widget::TouchEventType type) {
+		this->hide();
+	});
     return true;
+}
+
+void GameLayer::enableBackButton(bool value) {
+	m_btnBack->setVisible(value);
 }
 
 void GameLayer::show() {

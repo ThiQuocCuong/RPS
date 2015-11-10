@@ -7,6 +7,7 @@
 class GameLayer : public Node
 {
 protected:
+	Button *m_btnBack;
 	GameDelegate *m_delegate;
 public:
 	void setDelegate(GameDelegate *del) {
@@ -15,6 +16,7 @@ public:
 	virtual bool init();
 	virtual void show();
 	virtual void hide();
+	void enableBackButton(bool value);
 	CREATE_FUNC(GameLayer);
 };
 

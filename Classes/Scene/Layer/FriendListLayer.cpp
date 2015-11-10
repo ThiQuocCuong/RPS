@@ -19,7 +19,8 @@ bool FriendListLayer::init() {
     
     
     Size ws = Director::getInstance()->getWinSize();
-    
+
+	enableBackButton(true);
     ui::Scale9Sprite *bg = ui::Scale9Sprite::createWithSpriteFrameName("ui_panel.png");
     addChild(bg);
     bg->setContentSize(Size(0.8*ws));
@@ -30,8 +31,10 @@ bool FriendListLayer::init() {
     m_cellSize = cell->getCellSize();
     m_cellSize.width = 0.9*bg->getContentSize().width;
     
-    m_friendModels.pushBack(new FBUserModel());
-    m_friendModels.back()->release();
+	for (int i = 0; i < 6; i++) {
+		m_friendModels.pushBack(new FBUserModel());
+		m_friendModels.back()->release();
+	}
     
     m_tbw = TableView::create(this, Size(0.9*bg->getContentSize()));
     addChild(m_tbw);

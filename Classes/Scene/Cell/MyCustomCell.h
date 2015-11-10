@@ -15,6 +15,7 @@
 
 class MyCustomCell : public cocos2d::extension::TableViewCell {
 protected:
+	bool m_isHighlight;
 	GameDelegate *m_delegate;
 	cocos2d::Size m_cellSize;
 	ui::Scale9Sprite *m_bg;
@@ -22,6 +23,7 @@ public:
 	void setDelegate(GameDelegate *del);
     virtual bool init();
 	virtual void layout(Size size) {};
+	virtual void highlight(bool value);
 	CREATE_FUNC(MyCustomCell);
 };
 

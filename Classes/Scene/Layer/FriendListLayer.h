@@ -24,7 +24,6 @@ cocos2d::extension::TableViewDelegate
 	cocos2d::extension::TableViewCell* tableCellAtIndex(cocos2d::extension::TableView *table, ssize_t idx);
 	ssize_t numberOfCellsInTableView(cocos2d::extension::TableView *table);
 	cocos2d::Size tableCellSizeForIndex(cocos2d::extension::TableView *table, ssize_t idx);
-    
 public:
     virtual bool init();
     void onReceivedInvitableFriends(string json);
