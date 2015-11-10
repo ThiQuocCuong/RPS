@@ -73,8 +73,13 @@ void FriendCell::setModel(UserModel *model) {
 
 void FriendCell::setModel(FBUserModel *model) {
     m_lblInfo->setString(StringUtils::format("%s", model->m_name.c_str()));
-    if(!m_sprAvatar) {
-        m_sprAvatar = GC::gI()->spr()->createWithURL(model->m_imgURL);
+	if (!m_sprAvatar) {
+		if (model->m_imgURL.compare("") == 0) {
+			m_sprAvatar = Sprite::createWithSpriteFrameName("avarta_4.png");
+		}
+		else {
+			m_sprAvatar = GC::gI()->spr()->createWithURL(model->m_imgURL);
+		}
         addChild(m_sprAvatar);
     }
     if(m_sprAvatar) {
