@@ -12,20 +12,24 @@ Scene* MenuScene::createScene()
 	auto friendList = FriendListLayer::create();
 	auto selectRoom = SelectRoomLayer::create();
 	auto waitingRoom = WaitingRoomLayer::create();
+	auto leaderBoard = LeaderBoardLayer::create();
 
     // add layer as a child to scene
 	scene->addChild(layer);
 	scene->addChild(friendList);
 	scene->addChild(selectRoom);
 	scene->addChild(waitingRoom);
+	scene->addChild(leaderBoard);
 
 	friendList->setDelegate(layer);
 	selectRoom->setDelegate(layer);
 	waitingRoom->setDelegate(layer);
+	leaderBoard->setDelegate(layer);
 
 	layer->m_frendListLayer = friendList;
 	layer->m_selectRoomLayer = selectRoom;
 	layer->m_waitingRoomLayer = waitingRoom;
+	layer->m_leaderBoardLayer = leaderBoard;
 
     // return the scene
     return scene;
@@ -189,8 +193,10 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
             }
 		case MyButtonEvent::SETTING:
 			break;
-		case MyButtonEvent::LEADER_BOARD:
+		case MyButtonEvent::LEADER_BOARD: {
+			m_leaderBoardLayer->show();
 			break;
+		}
         case MyButtonEvent::WITH_FRIEND:{
 			/*string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
 			Sprite *spr = GC::gI()->spr()->createWithURL(str);

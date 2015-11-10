@@ -68,6 +68,13 @@ bool FriendCell::init(cocos2d::Size cellSize) {
 }
 
 void FriendCell::setModel(UserModel *model) {
+	if (!m_sprAvatar) {
+		m_sprAvatar = Sprite::createWithSpriteFrameName("avarta_4.png");
+		addChild(m_sprAvatar);
+		m_sprAvatar->setPosition(m_sprAvatar->getContentSize().width / 2.0f + 10, 0);
+		m_lblInfo->setPosition(m_sprAvatar->getPosition() +
+			Point(m_sprAvatar->getContentSize().width / 2.0f + 10, 0));
+	}
 	m_lblInfo->setString(StringUtils::format("Lvl %d %s", model->m_level, model->m_name.c_str()));
 }
 

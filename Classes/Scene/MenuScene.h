@@ -4,6 +4,7 @@
 #include "Layer/FriendListLayer.h"
 #include "Layer/SelectRoomLayer.h"
 #include "Layer/WaitingRoomLayer.h"
+#include "Layer/LeaderBoardLayer.h"
 #include "GameDelegate.h"
 
 class MenuScene : public cocos2d::Layer, FacebookDelegate, GameDelegate
@@ -11,6 +12,7 @@ class MenuScene : public cocos2d::Layer, FacebookDelegate, GameDelegate
 	FriendListLayer *m_frendListLayer;
 	SelectRoomLayer *m_selectRoomLayer;
 	WaitingRoomLayer *m_waitingRoomLayer;
+	LeaderBoardLayer *m_leaderBoardLayer;
 	cocos2d::Sprite *m_avarta;
 	cocos2d::Label *m_lblUserInfo;
 	cocos2d::Label *m_lblHeart;

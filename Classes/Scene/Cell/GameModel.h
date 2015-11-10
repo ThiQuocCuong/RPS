@@ -15,6 +15,16 @@ using namespace std;
 
 class UserModel: public Ref {
 public:
+	UserModel() {
+		m_id = "";
+		m_name = "";
+		m_level = 0;
+	}
+	UserModel(string id, string name, int level) {
+		m_id = id;
+		m_name = name;
+		m_level = level;
+	}
 	string m_id;
 	string m_name;
 	int m_level;
