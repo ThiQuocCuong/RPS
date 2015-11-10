@@ -70,7 +70,6 @@ void FriendListLayer::onReceivedInvitableFriends(string json) {
                     }
                 }
             }
-            
             m_friendModels.pushBack(model);
             model->release();
         }

@@ -52,18 +52,17 @@ bool FriendCell::init(cocos2d::Size cellSize) {
 	btnChat->setPosition(Point(m_cellSize.width - btnChat->getContentSize().width*btnView->getScale() / 2.0f - offset,
 		-btnView->getContentSize().height*btnView->getScale() / 2.0f - offset / 2.0f));
 
-	m_sprAvatar = Sprite::createWithSpriteFrameName("avarta_4.png");
-	addChild(m_sprAvatar);
-	m_sprAvatar->setPosition(m_sprAvatar->getContentSize().width / 2.0f + offset, 0);
+//	m_sprAvatar = Sprite::createWithSpriteFrameName("avarta_4.png");
+//	addChild(m_sprAvatar);
 
 	m_lblInfo = Label::createWithTTF("Lvl15 Wonka Thi", FNT_TTF, 20);
 	addChild(m_lblInfo);
 	m_lblInfo->setAnchorPoint(Point(0, 0.5));
-	m_lblInfo->setPosition(m_sprAvatar->getPosition() + Point(m_sprAvatar->getContentSize().width / 2.0f + offset, 0));
 
 	m_cellSize.height = btnView->getContentSize().height*btnView->getScale() + btnChat->getContentSize().height*btnChat->getScale() + offset * 5;
 
 	m_bg->setContentSize(m_cellSize - Size(0, 2*offset));
+    m_sprAvatar = nullptr;
 
 	return true;
 }
@@ -74,4 +73,13 @@ void FriendCell::setModel(UserModel *model) {
 
 void FriendCell::setModel(FBUserModel *model) {
     m_lblInfo->setString(StringUtils::format("%s", model->m_name.c_str()));
+    if(!m_sprAvatar) {
+        m_sprAvatar = GC::gI()->spr()->createWithURL(model->m_imgURL);
+        addChild(m_sprAvatar);
+    }
+    if(m_sprAvatar) {
+        m_sprAvatar->setPosition(m_sprAvatar->getContentSize().width / 2.0f + 10, 0);
+        m_lblInfo->setPosition(m_sprAvatar->getPosition() +
+                               Point(m_sprAvatar->getContentSize().width / 2.0f + 10, 0));
+    }
 }

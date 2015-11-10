@@ -13,7 +13,7 @@ class RemoteSprite : public cocos2d::Sprite
 	void callBackDownloadImage(cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response);
 public:
 	RemoteSprite();
-	static cocos2d::Sprite *createWithURL(std::string url, std::string defaultImg = "loading_(1).png");
+	static RemoteSprite *createWithURL(std::string url, std::string defaultImg = "loading_1.png");
 };
 
 #endif // __HELLOWORLD_SCENE_H__

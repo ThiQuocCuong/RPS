@@ -184,8 +184,10 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 			break;
 		case MyButtonEvent::LEADER_BOARD:
 			break;
-		case MyButtonEvent::WITH_FRIEND:
+        case MyButtonEvent::WITH_FRIEND:{
+                
 			break;
+            }
 		case MyButtonEvent::CREATE_ROOM:
 			break;
 		case MyButtonEvent::JOIN_ROOM: {

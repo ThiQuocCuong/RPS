@@ -10,7 +10,7 @@ RemoteSprite::RemoteSprite() {
 	m_numberOfFails = 0;
 	m_url = "";
 }
-cocos2d::Sprite *RemoteSprite::createWithURL(std::string url, std::string defaultImg) {
+RemoteSprite *RemoteSprite::createWithURL(std::string url, std::string defaultImg) {
 	auto mySprite = new RemoteSprite();
 	mySprite->m_url = url;
 	auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(url);

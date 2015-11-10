@@ -69,6 +69,8 @@
 		9795869F1BEB4B2700CC947A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 979586991BEB4B2700CC947A /* fonts */; };
 		979586A01BEB4B2700CC947A /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 9795869A1BEB4B2700CC947A /* HelloWorld.png */; };
 		979586A11BEB4B2700CC947A /* res in Resources */ = {isa = PBXBuildFile; fileRef = 9795869B1BEB4B2700CC947A /* res */; };
+		97959AB61BF1C6140042D9D9 /* RemoteSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AB31BF1C6140042D9D9 /* RemoteSprite.cpp */; };
+		97959AD41BF1CA5B0042D9D9 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AD31BF1CA5B0042D9D9 /* AnimationController.cpp */; };
 		97E8532B1BF08ACF0050E805 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853271BF08ACF0050E805 /* MenuScene.cpp */; };
 		97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532D1BF08AE30050E805 /* FriendCell.cpp */; };
 		97E853431BF08AE30050E805 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532F1BF08AE30050E805 /* GameModel.cpp */; };
@@ -197,6 +199,10 @@
 		979586991BEB4B2700CC947A /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../Resources/fonts; sourceTree = "<group>"; };
 		9795869A1BEB4B2700CC947A /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelloWorld.png; path = ../Resources/HelloWorld.png; sourceTree = "<group>"; };
 		9795869B1BEB4B2700CC947A /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../Resources/res; sourceTree = "<group>"; };
+		97959AB21BF1C6140042D9D9 /* AnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
+		97959AB31BF1C6140042D9D9 /* RemoteSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RemoteSprite.cpp; sourceTree = "<group>"; };
+		97959AB41BF1C6140042D9D9 /* RemoteSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteSprite.h; sourceTree = "<group>"; };
+		97959AD31BF1CA5B0042D9D9 /* AnimationController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
 		97E853271BF08ACF0050E805 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
 		97E853281BF08ACF0050E805 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		97E8532D1BF08AE30050E805 /* FriendCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendCell.cpp; sourceTree = "<group>"; };
@@ -414,6 +420,10 @@
 		979586511BEB135A00CC947A /* GC */ = {
 			isa = PBXGroup;
 			children = (
+				97959AD31BF1CA5B0042D9D9 /* AnimationController.cpp */,
+				97959AB21BF1C6140042D9D9 /* AnimationController.h */,
+				97959AB31BF1C6140042D9D9 /* RemoteSprite.cpp */,
+				97959AB41BF1C6140042D9D9 /* RemoteSprite.h */,
 				97E8534C1BF08B650050E805 /* JsonController.cpp */,
 				97E8534D1BF08B650050E805 /* JsonController.h */,
 				979586521BEB135A00CC947A /* ButtonController.cpp */,
@@ -650,12 +660,14 @@
 				979586731BEB135A00CC947A /* LoginScene.cpp in Sources */,
 				97E853431BF08AE30050E805 /* GameModel.cpp in Sources */,
 				97E853441BF08AE30050E805 /* MyCustomCell.cpp in Sources */,
+				97959AB61BF1C6140042D9D9 /* RemoteSprite.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				97E8534B1BF08AE30050E805 /* SelectRoomLayer.cpp in Sources */,
 				97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */,
 				979586701BEB135A00CC947A /* GameDelegate.cpp in Sources */,
 				9795866A1BEB135A00CC947A /* ButtonController.cpp in Sources */,
 				979586711BEB135A00CC947A /* GameScene.cpp in Sources */,
+				97959AD41BF1CA5B0042D9D9 /* AnimationController.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
