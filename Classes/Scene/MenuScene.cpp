@@ -11,14 +11,21 @@ Scene* MenuScene::createScene()
 	auto layer = MenuScene::create();
 	auto friendList = FriendListLayer::create();
 	auto selectRoom = SelectRoomLayer::create();
+	auto waitingRoom = WaitingRoomLayer::create();
 
     // add layer as a child to scene
 	scene->addChild(layer);
 	scene->addChild(friendList);
 	scene->addChild(selectRoom);
+	scene->addChild(waitingRoom);
+
+	friendList->setDelegate(layer);
+	selectRoom->setDelegate(layer);
+	waitingRoom->setDelegate(layer);
 
 	layer->m_frendListLayer = friendList;
 	layer->m_selectRoomLayer = selectRoom;
+	layer->m_waitingRoomLayer = waitingRoom;
 
     // return the scene
     return scene;
@@ -185,9 +192,12 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 		case MyButtonEvent::LEADER_BOARD:
 			break;
         case MyButtonEvent::WITH_FRIEND:{
-                
+			/*string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
+			Sprite *spr = GC::gI()->spr()->createWithURL(str);
+			addChild(spr);
+			spr->setPosition(Director::getInstance()->getWinSize() / 2.0f);*/
 			break;
-            }
+        }
 		case MyButtonEvent::CREATE_ROOM:
 			break;
 		case MyButtonEvent::JOIN_ROOM: {
@@ -217,4 +227,9 @@ void MenuScene::onAPI(const std::string& tag, const std::string& jsonData) {
     if(tag.compare(TAG_API_INVITE_FRIEND) == 0) {
         m_frendListLayer->onReceivedInvitableFriends(jsonData);
     }
+}
+
+
+void MenuScene::onEnterRoom(RoomModel *model) {
+	m_waitingRoomLayer->show();
 }

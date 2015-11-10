@@ -38,7 +38,7 @@ RemoteSprite *RemoteSprite::createWithURL(std::string url, std::string defaultIm
 }
 
 void RemoteSprite::download(std::string url)  {
-	if (m_httpRequest) {
+	if (!m_httpRequest) {
 		m_httpRequest = new network::HttpRequest();
 		m_httpRequest->setRequestType(cocos2d::network::HttpRequest::Type::GET);
 		m_httpRequest->setResponseCallback(CC_CALLBACK_2(RemoteSprite::callBackDownloadImage, this));

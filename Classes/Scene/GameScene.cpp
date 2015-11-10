@@ -111,31 +111,31 @@ bool GameScene::init()
 	Button *btnPause = GC::gI()->btn()->create("btn_pause.png");
 	addChild(btnPause);
 	btnPause->setPosition(Point(ws) - Point(btnPause->getContentSize().width, 0.75*btnPause->getContentSize().height));
-	btnPause->setTag(TAG_BTN_PAUSE);
+	btnPause->setTag((int)MyButtonEvent::PAUSE);
 	btnPause->addTouchEventListener(CC_CALLBACK_2(GameScene::callBackRPS, this));
 
 	Button *btnMenu = GC::gI()->btn()->create("btn_menu.png");
 	addChild(btnMenu);
 	btnMenu->setPosition(Point(btnPause->getContentSize().width, ws.height - 0.75*btnPause->getContentSize().height));
-	btnMenu->setTag(TAG_BTN_MENU);
+	btnMenu->setTag((int)MyButtonEvent::RETURN_TO_MENU);
 	btnMenu->addTouchEventListener(CC_CALLBACK_2(GameScene::callBackRPS, this));
 
 	Button *btnPaper = GC::gI()->btn()->create("paper.png");
 	addChild(btnPaper);
 	btnPaper->setPosition(Point(ws.width / 2.0f, btnPaper->getContentSize().height));
-	btnPaper->setTag(TAG_BTN_PAPER);
+	btnPaper->setTag((int)MyButtonEvent::GAME_PAPER);
 	btnPaper->addTouchEventListener(CC_CALLBACK_2(GameScene::callBackRPS, this));
 
 	Button *btnRock = GC::gI()->btn()->create("rock.png");
 	addChild(btnRock);
 	btnRock->setPosition(btnPaper->getPosition() + Point(-btnRock->getContentSize().width / 2.0f - btnPaper->getContentSize().width / 2.0f - offset, 0));
-	btnRock->setTag(TAG_BTN_ROCK);
+	btnRock->setTag((int)MyButtonEvent::GAME_ROCK);
 	btnRock->addTouchEventListener(CC_CALLBACK_2(GameScene::callBackRPS, this));
 
 	Button *btnScissors = GC::gI()->btn()->create("scissors.png");
 	addChild(btnScissors);
 	btnScissors->setPosition(btnPaper->getPosition() + Point(btnRock->getContentSize().width / 2.0f + btnPaper->getContentSize().width / 2.0f + offset, 0));
-	btnScissors->setTag(TAG_BTN_SCISSORS);
+	btnScissors->setTag((int)MyButtonEvent::GAME_SCISSORS);
 	btnScissors->addTouchEventListener(CC_CALLBACK_2(GameScene::callBackRPS, this));
 
 	m_countDown = MAX_COUNT_DOWN;
@@ -204,17 +204,48 @@ void GameScene::callBackRPS(Ref *sender, Widget::TouchEventType type) {
 	case cocos2d::ui::Widget::TouchEventType::ENDED: {
 		Button *btn = (Button *)sender;
 		m_sprUser1->setTag(btn->getTag());
-		switch (btn->getTag())
+		MyButtonEvent tagBtn = (MyButtonEvent)btn->getTag();
+		switch (tagBtn)
 		{
-		case TAG_BTN_PAPER: {
+		case MyButtonEvent::SHOP:
+			break;
+		case MyButtonEvent::FRIEND:
+			break;
+		case MyButtonEvent::SETTING:
+			break;
+		case MyButtonEvent::LEADER_BOARD:
+			break;
+		case MyButtonEvent::WITH_FRIEND:
+			break;
+		case MyButtonEvent::CREATE_ROOM:
+			break;
+		case MyButtonEvent::JOIN_ROOM:
+			break;
+		case MyButtonEvent::MAIL:
+			break;
+		case MyButtonEvent::MONEY:
+			break;
+		case MyButtonEvent::HEART:
+			break;
+		case MyButtonEvent::PAUSE:
+			break;
+		case MyButtonEvent::BACK:
+			break;
+		case MyButtonEvent::NEXT:
+			break;
+		case MyButtonEvent::RETURN_TO_MENU: {
+			onReturnToMenu();
+			break;
+		}
+		case MyButtonEvent::GAME_PAPER: {
 			m_sprUser1->setSpriteFrame("paper.png");
 			break;
 		}
-		case TAG_BTN_ROCK: {
+		case MyButtonEvent::GAME_ROCK:{
 			m_sprUser1->setSpriteFrame("rock.png");
 			break;
 		}
-		case TAG_BTN_SCISSORS:{
+		case MyButtonEvent::GAME_SCISSORS:{
 			m_sprUser1->setSpriteFrame("scissors.png");
 			break;
 		}

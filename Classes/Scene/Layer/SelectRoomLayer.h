@@ -6,6 +6,8 @@
 
 class SelectRoomLayer : public GameLayer, cocos2d::extension::TableViewDataSource, cocos2d::extension::TableViewDelegate
 {
+
+	int m_currentSelectedId;
 	Vector<RoomModel *> m_models;
 	Size m_cellSize;
 	//TableView

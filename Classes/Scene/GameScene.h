@@ -23,6 +23,7 @@ class GameScene : public Layer, GameDelegate, FacebookDelegate
 	//delegate
 	void onReplay();
     void onReturnToMenu();
+	void onEnterRoom(RoomModel *model){};
     
     //fb Delegate
     void onLogin(bool isLogin, const std::string& msg);

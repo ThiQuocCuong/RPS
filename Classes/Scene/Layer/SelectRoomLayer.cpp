@@ -12,15 +12,11 @@ bool SelectRoomLayer::init()
 	Size ws = Director::getInstance()->getWinSize();
 
 	float offset = 20;
-	Button *btnBack = GC::gI()->btn()->create("btn_back.png");
-	addChild(btnBack);
-	btnBack->setPosition(Point(btnBack->getContentSize().width, ws.height - 0.75*btnBack->getContentSize().height));
-	btnBack->setTag((int)MyButtonEvent::BACK);
-	btnBack->addTouchEventListener(CC_CALLBACK_2(SelectRoomLayer::callBackBtn, this));
+	enableBackButton(true);
 
 	Button *btnCreateRoom = GC::gI()->btn()->create("btn_green.png");
 	addChild(btnCreateRoom);
-	btnCreateRoom->setContentSize(Size(ws.width / 2.0f, 0.75*btnBack->getContentSize().height));
+	btnCreateRoom->setContentSize(Size(ws.width / 2.0f, 0.75*m_btnBack->getContentSize().height));
 	btnCreateRoom->setScale9Enabled(true);
 	btnCreateRoom->setPosition(Point(ws.width/2.0f, btnCreateRoom->getContentSize().height));
 	btnCreateRoom->setTitleText("Create Room");
@@ -38,7 +34,7 @@ bool SelectRoomLayer::init()
 	btnJoinRoom->setTag((int)MyButtonEvent::JOIN_ROOM);
 	btnJoinRoom->addTouchEventListener(CC_CALLBACK_2(SelectRoomLayer::callBackBtn, this));
 
-	Size tableSize = Size(0.9*ws.width, (btnBack->getPositionY() - btnJoinRoom->getPositionY() - 2*btnBack->getContentSize().height));
+	Size tableSize = Size(0.9*ws.width, (m_btnBack->getPositionY() - btnJoinRoom->getPositionY() - 2 * m_btnBack->getContentSize().height));
 	m_cellSize = Size(tableSize.width / 2.0f, tableSize.height);
 
 	for (int i = 0; i < 10; i++) {
@@ -54,6 +50,8 @@ bool SelectRoomLayer::init()
 	tbw->setDirection(extension::ScrollView::Direction::HORIZONTAL);
 	tbw->setBounceable(true);
 	tbw->reloadData();
+
+	m_currentSelectedId = 0;
 
 	setVisible(false);
     return true;
@@ -72,6 +70,10 @@ void SelectRoomLayer::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 		switch (tag)
 		{
 		case MyButtonEvent::JOIN_ROOM: {
+			RoomModel *model = m_models.at(m_currentSelectedId);
+			if (m_delegate) {
+				m_delegate->onEnterRoom(model);
+			}
 			break;
 		}
 		case MyButtonEvent::BACK: {
@@ -94,7 +96,18 @@ void SelectRoomLayer::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 }
 
 void SelectRoomLayer::tableCellTouched(cocos2d::extension::TableView* table, cocos2d::extension::TableViewCell* cell) {
-
+	m_currentSelectedId = cell->getIdx();
+	for (int i = 0; i < m_models.size(); i++) {
+		MyCustomCell * c = (MyCustomCell*)table->cellAtIndex(i);
+		if (c) {
+			if (i != m_currentSelectedId) {
+				c->highlight(false);
+			}
+			else {
+				c->highlight(true);
+			}
+		}
+	}
 }
 cocos2d::extension::TableViewCell* SelectRoomLayer::tableCellAtIndex(cocos2d::extension::TableView *table, ssize_t idx) {
 	RoomCell *cell = (RoomCell *)table->dequeueCell();
@@ -102,6 +115,7 @@ cocos2d::extension::TableViewCell* SelectRoomLayer::tableCellAtIndex(cocos2d::ex
 		cell = RoomCell::create();
 		cell->layout(m_cellSize);
 	}
+	cell->highlight(false);
 	return cell;
 }
 ssize_t SelectRoomLayer::numberOfCellsInTableView(cocos2d::extension::TableView *table) {

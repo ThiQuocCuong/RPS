@@ -21,7 +21,11 @@ enum class MyButtonEvent {
 	HEART,
 	PAUSE,
 	BACK,
-	NEXT
+	NEXT,
+	RETURN_TO_MENU,
+	GAME_PAPER,
+	GAME_ROCK,
+	GAME_SCISSORS
 };
 
 enum class BattleResult {
