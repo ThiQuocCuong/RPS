@@ -13,7 +13,8 @@ m_sprController(nullptr),
 m_resourceController(nullptr),
 m_btnController(nullptr),
 m_fbController(nullptr),
-m_jsonController(nullptr){
+m_jsonController(nullptr),
+m_animationController(nullptr){
 
 }
 
@@ -53,4 +54,11 @@ JsonController *GC::json() {
 		m_jsonController = new JsonController();
 	}
 	return m_jsonController;
+}
+
+AnimationController *GC::anim() {
+	if (!m_animationController) {
+		m_animationController = new AnimationController();
+	}
+	return m_animationController;
 }

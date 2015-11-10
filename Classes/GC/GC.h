@@ -7,10 +7,12 @@
 #include "LabelController.h"
 #include "FacebookController.h"
 #include "JsonController.h"
+#include "AnimationController.h"
 #include "../Prefix.h"
 using namespace cocos2d;
 using namespace extension;
 using namespace ui;
+using namespace std;
 
 class GC
 {
@@ -22,6 +24,7 @@ class GC
 	ResourceController *m_resourceController;
 	FacebookController *m_fbController;
 	JsonController *m_jsonController;
+	AnimationController *m_animationController;
 public:
 	static GC *gI();
 	LabelController *lbl();
@@ -30,6 +33,7 @@ public:
 	ResourceController *resoure();
 	FacebookController *fb();
 	JsonController *json();
+	AnimationController *anim();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
