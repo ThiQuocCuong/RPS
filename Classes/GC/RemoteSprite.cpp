@@ -72,7 +72,10 @@ void RemoteSprite::callBackDownloadImage(cocos2d::network::HttpClient* client, c
 		img->release();
 		if (texture) {
 			stopAllActions();
-			setTexture(texture);
+            //Sprite *spr = Sprite::createWithTexture(texture);
+            SpriteFrame *frame = SpriteFrame::createWithTexture(texture, Rect(0, 0, 160, 160));
+            setSpriteFrame(frame);
+            setScale(0.5);
 		}
 	}
 	else {
