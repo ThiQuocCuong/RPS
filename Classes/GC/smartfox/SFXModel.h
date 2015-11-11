@@ -1,7 +1,7 @@
 #ifndef __CLIENT_MODEL_H__
 #define __CLIENT_MODEL_H__
 #include "cocos2d.h"
-#include "Entities/Data/Vec3D.h"
+#include "Vec3D.h"
 using namespace std;
 using namespace cocos2d;
 

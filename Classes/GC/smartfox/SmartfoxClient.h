@@ -8,7 +8,7 @@
 #include "BanMode.h"
 #include "RoomSettings.h"
 #include "SFSGameSettings.h"
-#include "Match/MatchExpression.h"
+#include "MatchExpression.h"
 #include "Invitation.h"
 #include "InvitationReply.h"
 
