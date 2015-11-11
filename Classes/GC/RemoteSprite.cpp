@@ -9,6 +9,7 @@ RemoteSprite::RemoteSprite() {
 	m_httpRequest = nullptr;
 	m_numberOfFails = 0;
 	m_url = "";
+	m_remoteSpriteCallBack = nullptr;
 }
 RemoteSprite *RemoteSprite::createWithURL(std::string url, std::string defaultImg) {
 	auto mySprite = new RemoteSprite();
@@ -75,7 +76,9 @@ void RemoteSprite::callBackDownloadImage(cocos2d::network::HttpClient* client, c
             //Sprite *spr = Sprite::createWithTexture(texture);
             SpriteFrame *frame = SpriteFrame::createWithTexture(texture, Rect(0, 0, 160, 160));
             setSpriteFrame(frame);
-            setScale(0.5);
+			if (m_remoteSpriteCallBack) {
+				m_remoteSpriteCallBack(true);
+			}
 		}
 	}
 	else {
@@ -86,6 +89,11 @@ void RemoteSprite::callBackDownloadImage(cocos2d::network::HttpClient* client, c
 		else {
 			stopAllActions();
 			setSpriteFrame("loading_error.png");
+			m_remoteSpriteCallBack(false);
 		}
 	}
+}
+
+void RemoteSprite::setRemoteSpriteCallBack(const remoteSpriteCallBack& callback) {
+	m_remoteSpriteCallBack = callback;
 }

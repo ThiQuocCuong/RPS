@@ -6,6 +6,8 @@
 #include "network/HttpResponse.h"
 class RemoteSprite : public cocos2d::Sprite
 {
+	typedef std::function<void(bool succeed)> remoteSpriteCallBack;
+	remoteSpriteCallBack m_remoteSpriteCallBack;
 	cocos2d::network::HttpRequest *m_httpRequest;
 	std::string m_url;
 	int m_numberOfFails;
@@ -13,6 +15,7 @@ class RemoteSprite : public cocos2d::Sprite
 	void callBackDownloadImage(cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response);
 public:
 	RemoteSprite();
+	void setRemoteSpriteCallBack(const remoteSpriteCallBack& callback);
 	static RemoteSprite *createWithURL(std::string url, std::string defaultImg = "loading_1.png");
 };
 
