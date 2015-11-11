@@ -6,7 +6,7 @@ Animate *AnimationController::create(string prefix, int frameCount, float delay,
     for(int i=startIndex;i<startIndex+frameCount;i++) {
         string name = StringUtils::format("%s_%d.png", prefix.c_str(), i);
         SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
-        frames.pushBack(frames);
+        frames.pushBack(frame);
     }
     Animation *animation = Animation::createWithSpriteFrames(frames);
     return Animate::create(animation);

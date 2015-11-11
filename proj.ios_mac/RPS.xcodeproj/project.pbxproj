@@ -71,6 +71,8 @@
 		979586A11BEB4B2700CC947A /* res in Resources */ = {isa = PBXBuildFile; fileRef = 9795869B1BEB4B2700CC947A /* res */; };
 		97959AB61BF1C6140042D9D9 /* RemoteSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AB31BF1C6140042D9D9 /* RemoteSprite.cpp */; };
 		97959AD41BF1CA5B0042D9D9 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AD31BF1CA5B0042D9D9 /* AnimationController.cpp */; };
+		97959AD91BF1F3C90042D9D9 /* LeaderBoardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AD51BF1F3C90042D9D9 /* LeaderBoardLayer.cpp */; };
+		97959ADA1BF1F3C90042D9D9 /* WaitingRoomLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97959AD71BF1F3C90042D9D9 /* WaitingRoomLayer.cpp */; };
 		97E8532B1BF08ACF0050E805 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853271BF08ACF0050E805 /* MenuScene.cpp */; };
 		97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532D1BF08AE30050E805 /* FriendCell.cpp */; };
 		97E853431BF08AE30050E805 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532F1BF08AE30050E805 /* GameModel.cpp */; };
@@ -203,6 +205,10 @@
 		97959AB31BF1C6140042D9D9 /* RemoteSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RemoteSprite.cpp; sourceTree = "<group>"; };
 		97959AB41BF1C6140042D9D9 /* RemoteSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteSprite.h; sourceTree = "<group>"; };
 		97959AD31BF1CA5B0042D9D9 /* AnimationController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
+		97959AD51BF1F3C90042D9D9 /* LeaderBoardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LeaderBoardLayer.cpp; sourceTree = "<group>"; };
+		97959AD61BF1F3C90042D9D9 /* LeaderBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderBoardLayer.h; sourceTree = "<group>"; };
+		97959AD71BF1F3C90042D9D9 /* WaitingRoomLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaitingRoomLayer.cpp; sourceTree = "<group>"; };
+		97959AD81BF1F3C90042D9D9 /* WaitingRoomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitingRoomLayer.h; sourceTree = "<group>"; };
 		97E853271BF08ACF0050E805 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
 		97E853281BF08ACF0050E805 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		97E8532D1BF08AE30050E805 /* FriendCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendCell.cpp; sourceTree = "<group>"; };
@@ -494,6 +500,10 @@
 		97E853351BF08AE30050E805 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
+				97959AD51BF1F3C90042D9D9 /* LeaderBoardLayer.cpp */,
+				97959AD61BF1F3C90042D9D9 /* LeaderBoardLayer.h */,
+				97959AD71BF1F3C90042D9D9 /* WaitingRoomLayer.cpp */,
+				97959AD81BF1F3C90042D9D9 /* WaitingRoomLayer.h */,
 				97E853551BF08C2B0050E805 /* FriendListLayer.cpp */,
 				97E853561BF08C2B0050E805 /* FriendListLayer.h */,
 				97E8533C1BF08AE30050E805 /* GameLayer.cpp */,
@@ -665,9 +675,11 @@
 				97E8534B1BF08AE30050E805 /* SelectRoomLayer.cpp in Sources */,
 				97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */,
 				979586701BEB135A00CC947A /* GameDelegate.cpp in Sources */,
+				97959ADA1BF1F3C90042D9D9 /* WaitingRoomLayer.cpp in Sources */,
 				9795866A1BEB135A00CC947A /* ButtonController.cpp in Sources */,
 				979586711BEB135A00CC947A /* GameScene.cpp in Sources */,
 				97959AD41BF1CA5B0042D9D9 /* AnimationController.cpp in Sources */,
+				97959AD91BF1F3C90042D9D9 /* LeaderBoardLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

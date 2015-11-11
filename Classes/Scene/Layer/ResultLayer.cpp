@@ -51,21 +51,21 @@ bool ResultLayer::init()
 
 void ResultLayer::show(BattleResult result) {
 	runAction(Sequence::create(DelayTime::create(1), Show::create(), nullptr));
-	switch (result)
-	{
-	case BattleResult::WIN: {
-		m_lblNotify->setString("Win");
-		break;
-	}
-	case BattleResult::LOSE: {
-		m_lblNotify->setString("Lose");
-		break;
-	}
-	case BattleResult::EQUAL: {
-		m_lblNotify->setString("Equal");
-		break;
-	}
-	default:
-		break;
-	}
+//	switch (result)
+//	{
+//	case BattleResult::WIN: {
+//		m_lblNotify->setString("Win");
+//		break;
+//	}
+//	case BattleResult::LOSE: {
+//		m_lblNotify->setString("Lose");
+//		break;
+//	}
+//	case BattleResult::EQUAL: {
+//		m_lblNotify->setString("Equal");
+//		break;
+//	}
+//	default:
+//		break;
+//	}
 }
