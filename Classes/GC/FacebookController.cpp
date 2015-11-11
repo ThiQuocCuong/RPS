@@ -62,7 +62,6 @@ void FacebookController::onPermission(bool isLogin, const std::string& msg) {
     }
 }
 void FacebookController::onAPI(const std::string& tag, const std::string& jsonData) {
-    CCLOG("jsonAPI %s", jsonData.c_str());
 	if (m_delegate) {
 		m_delegate->onAPI(tag, jsonData);
 	}

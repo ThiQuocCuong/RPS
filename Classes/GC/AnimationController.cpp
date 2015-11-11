@@ -8,6 +8,6 @@ Animate *AnimationController::create(string prefix, int frameCount, float delay,
         SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
         frames.pushBack(frame);
     }
-    Animation *animation = Animation::createWithSpriteFrames(frames);
+    Animation *animation = Animation::createWithSpriteFrames(frames, delay);
     return Animate::create(animation);
 }
