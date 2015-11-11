@@ -8,6 +8,8 @@
 
 #define TAG_API_INVITE_FRIEND "tag_api_invitable"
 
+#define MAX_HEIGHT_AVARTA 55
+
 enum class MyButtonEvent {
 	SHOP = 0,
 	FRIEND,

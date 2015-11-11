@@ -14,7 +14,11 @@ RemoteSprite::RemoteSprite() {
 RemoteSprite *RemoteSprite::createWithURL(std::string url, std::string key, std::string defaultImg) {
     auto mySprite = new RemoteSprite();
     mySprite->m_url = url;
-    mySprite->m_key = url;
+    if(key == "") {
+        mySprite->m_key = url;
+    } else {
+        mySprite->m_key = key;
+    }
     auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(url);
     bool didSpriteInitSucceed = false;
     if (texture) {

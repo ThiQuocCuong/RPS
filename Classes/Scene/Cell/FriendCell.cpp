@@ -10,8 +10,6 @@
 using namespace cocos2d;
 using namespace ui;
 
-#define MAX_HEIGHT_AVARTA 50
-
 FriendCell *FriendCell::create(cocos2d::Size cellSize) {
     FriendCell * ret = new (std::nothrow) FriendCell();
     if (ret && ret->init(cellSize))
@@ -92,7 +90,6 @@ void FriendCell::setModel(FBUserModel *model) {
             m_sprAvatar = GC::gI()->spr()->createWithURL(model->m_imgURL, model->m_id);
             ((RemoteSprite *)m_sprAvatar)->setRemoteSpriteCallBack([=](bool result) {
                 if(result) {
-                    this->m_sprAvatar->setScale(0.5);
                     CCLOG("load %s 's picture succeed", model->m_name.c_str());
                 } else {
                     CCLOG("load %s 's picture error", model->m_name.c_str());
