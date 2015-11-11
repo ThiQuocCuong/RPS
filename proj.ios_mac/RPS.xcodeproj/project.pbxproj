@@ -209,6 +209,8 @@
 		97BAF6F81BF32B8E00AC4A17 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BAF6F71BF32B8D00AC4A17 /* libc++.dylib */; };
 		97BAF6FF1BF3350200AC4A17 /* SFDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BAF6FA1BF3350200AC4A17 /* SFDelegate.cpp */; };
 		97BAF7001BF3350200AC4A17 /* SmartfoxClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BAF6FD1BF3350200AC4A17 /* SmartfoxClient.cpp */; };
+		97BAF7031BF34D9C00AC4A17 /* ShopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BAF7011BF34D9C00AC4A17 /* ShopLayer.cpp */; };
+		97BAF7061BF34E4200AC4A17 /* ShopItemCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BAF7041BF34E4200AC4A17 /* ShopItemCell.cpp */; };
 		97E8532B1BF08ACF0050E805 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E853271BF08ACF0050E805 /* MenuScene.cpp */; };
 		97E853421BF08AE30050E805 /* FriendCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532D1BF08AE30050E805 /* FriendCell.cpp */; };
 		97E853431BF08AE30050E805 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97E8532F1BF08AE30050E805 /* GameModel.cpp */; };
@@ -735,6 +737,10 @@
 		97BAF6FC1BF3350200AC4A17 /* SFXModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFXModel.h; sourceTree = "<group>"; };
 		97BAF6FD1BF3350200AC4A17 /* SmartfoxClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartfoxClient.cpp; sourceTree = "<group>"; };
 		97BAF6FE1BF3350200AC4A17 /* SmartfoxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartfoxClient.h; sourceTree = "<group>"; };
+		97BAF7011BF34D9C00AC4A17 /* ShopLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShopLayer.cpp; sourceTree = "<group>"; };
+		97BAF7021BF34D9C00AC4A17 /* ShopLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopLayer.h; sourceTree = "<group>"; };
+		97BAF7041BF34E4200AC4A17 /* ShopItemCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShopItemCell.cpp; sourceTree = "<group>"; };
+		97BAF7051BF34E4200AC4A17 /* ShopItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopItemCell.h; sourceTree = "<group>"; };
 		97E853271BF08ACF0050E805 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
 		97E853281BF08ACF0050E805 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		97E8532D1BF08AE30050E805 /* FriendCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FriendCell.cpp; sourceTree = "<group>"; };
@@ -1664,6 +1670,8 @@
 		97E8532C1BF08AE30050E805 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				97BAF7041BF34E4200AC4A17 /* ShopItemCell.cpp */,
+				97BAF7051BF34E4200AC4A17 /* ShopItemCell.h */,
 				97E8532D1BF08AE30050E805 /* FriendCell.cpp */,
 				97E8532E1BF08AE30050E805 /* FriendCell.h */,
 				97E8532F1BF08AE30050E805 /* GameModel.cpp */,
@@ -1679,6 +1687,8 @@
 		97E853351BF08AE30050E805 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
+				97BAF7011BF34D9C00AC4A17 /* ShopLayer.cpp */,
+				97BAF7021BF34D9C00AC4A17 /* ShopLayer.h */,
 				97959AD51BF1F3C90042D9D9 /* LeaderBoardLayer.cpp */,
 				97959AD61BF1F3C90042D9D9 /* LeaderBoardLayer.h */,
 				97959AD71BF1F3C90042D9D9 /* WaitingRoomLayer.cpp */,
@@ -1892,11 +1902,13 @@
 				97BAA7161BF3270100AC4A17 /* BitSwarmClient.cpp in Sources */,
 				97BAA7631BF3270100AC4A17 /* MapLimits.cpp in Sources */,
 				97BAA7311BF3270100AC4A17 /* SFSConstants.cpp in Sources */,
+				97BAF7061BF34E4200AC4A17 /* ShopItemCell.cpp in Sources */,
 				97BAA7591BF3270100AC4A17 /* SFSGameSettings.cpp in Sources */,
 				97BAA7721BF3270100AC4A17 /* SetUserVariablesRequest.cpp in Sources */,
 				97BAA7131BF3270100AC4A17 /* BaseController.cpp in Sources */,
 				97BAA7561BF3270100AC4A17 /* InvitationReplyRequest.cpp in Sources */,
 				97BAA7761BF3270100AC4A17 /* SmartFox.cpp in Sources */,
+				97BAF7031BF34D9C00AC4A17 /* ShopLayer.cpp in Sources */,
 				97BAA76B1BF3270100AC4A17 /* PrivateMessageRequest.cpp in Sources */,
 				97BAA72A1BF3270100AC4A17 /* NumberMatch.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
