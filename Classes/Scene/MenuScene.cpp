@@ -198,10 +198,19 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 			break;
 		}
         case MyButtonEvent::WITH_FRIEND:{
-			/*string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
-			Sprite *spr = GC::gI()->spr()->createWithURL(str);
-			addChild(spr);
-			spr->setPosition(Director::getInstance()->getWinSize() / 2.0f);*/
+			for (int i = 0; i < 10; i++){
+				string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
+				RemoteSprite *spr = GC::gI()->spr()->createWithURL(str);
+				spr->setRemoteSpriteCallBack([](bool result) {
+					if (result) {
+
+					} else {
+
+					}
+				});
+				addChild(spr);
+				spr->setPosition(Director::getInstance()->getWinSize() / 2.0f);
+			}
 			break;
         }
 		case MyButtonEvent::CREATE_ROOM:
