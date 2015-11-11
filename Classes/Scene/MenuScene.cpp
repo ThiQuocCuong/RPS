@@ -4,35 +4,43 @@
 
 Scene* MenuScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
+	// 'scene' is an autorelease object
+	auto scene = Scene::create();
+
+	// 'layer' is an autorelease object
+	auto frontLayer = Node::create();
 	auto layer = MenuScene::create();
 	auto friendList = FriendListLayer::create();
 	auto selectRoom = SelectRoomLayer::create();
 	auto waitingRoom = WaitingRoomLayer::create();
 	auto leaderBoard = LeaderBoardLayer::create();
+	auto shopLayer = ShopLayer::create();
 
-    // add layer as a child to scene
+	// add layer as a child to scene
 	scene->addChild(layer);
 	scene->addChild(friendList);
 	scene->addChild(selectRoom);
 	scene->addChild(waitingRoom);
 	scene->addChild(leaderBoard);
+	scene->addChild(shopLayer);
+	scene->addChild(frontLayer);
 
 	friendList->setDelegate(layer);
 	selectRoom->setDelegate(layer);
 	waitingRoom->setDelegate(layer);
 	leaderBoard->setDelegate(layer);
+	shopLayer->setDelegate(layer);
 
 	layer->m_frendListLayer = friendList;
 	layer->m_selectRoomLayer = selectRoom;
 	layer->m_waitingRoomLayer = waitingRoom;
 	layer->m_leaderBoardLayer = leaderBoard;
+	layer->m_shopLayer = shopLayer;
+	layer->m_frontLayer = frontLayer;
+	layer->initHeader();
 
-    // return the scene
-    return scene;
+	// return the scene
+	return scene;
 }
 
 // on "init" you need to initialize your instance
@@ -66,13 +74,13 @@ bool MenuScene::init()
 
 	float offsetBtnX = (ws.width - 4 * btnFriend->getContentSize().width) / 5.0f;
 
-	btnFriend->setPosition(Point(ws.width / 2.0f + btnFriend->getContentSize().width / 2.0f + offsetBtnX/2.0f, btnFriend->getContentSize().height / 2.0f + offset));
+	btnFriend->setPosition(Point(ws.width / 2.0f + btnFriend->getContentSize().width / 2.0f + offsetBtnX / 2.0f, btnFriend->getContentSize().height / 2.0f + offset));
 	btnFriend->setTag((int)MyButtonEvent::FRIEND);
 	btnFriend->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Button *btnLeaderBoard = GC::gI()->btn()->create("btn_leader_board.png");
 	addChild(btnLeaderBoard);
-	btnLeaderBoard->setPosition(Point(ws.width / 2.0f - btnLeaderBoard->getContentSize().width / 2.0f - offsetBtnX/2.0f, btnFriend->getPositionY()));
+	btnLeaderBoard->setPosition(Point(ws.width / 2.0f - btnLeaderBoard->getContentSize().width / 2.0f - offsetBtnX / 2.0f, btnFriend->getPositionY()));
 	btnLeaderBoard->setTag((int)MyButtonEvent::LEADER_BOARD);
 	btnLeaderBoard->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
@@ -121,56 +129,63 @@ bool MenuScene::init()
 	m_avarta = Sprite::createWithSpriteFrameName("avarta_3.png");
 	addChild(m_avarta);
 	m_avarta->setAnchorPoint(Point(0.5, 0));
-	m_avarta->setPosition(btnCreateRoom->getPosition() + Point(0, btnCreateRoom->getContentSize().height/2.0f + offset));
+	m_avarta->setPosition(btnCreateRoom->getPosition() + Point(0, btnCreateRoom->getContentSize().height / 2.0f + offset));
 
 	m_lblUserInfo = Label::createWithTTF("Lvl15. Wonka Thi", FNT_TTF, 40);
 	addChild(m_lblUserInfo);
 	m_lblUserInfo->setAnchorPoint(Point(0.5, 0));
 	m_lblUserInfo->setPosition(m_avarta->getPosition() + Point(0, m_avarta->getContentSize().height + offset));
 
+
+
+	/*Button *btnMail = GC::gI()->btn()->create("btn_gift.png");
+	addChild(btnMail);
+	btnMail->setPosition(Point(offset + btnMail->getContentSize().width, ws.height - btnMail->getContentSize().height/2.0f - btnHeart->getContentSize().height/2.0f));
+	btnMail->setTag((int)MyButtonEvent::MAIL);
+	btnMail->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));*/
+
+	GC::gI()->fb()->setDelegate(this);
+	return true;
+}
+
+void MenuScene::initHeader() {
+	float offset = 20;
+	Size ws = Director::getInstance()->getWinSize();
 	Button *btnMoney = GC::gI()->btn()->create("btn_yellow.png");
-	addChild(btnMoney);
+	m_frontLayer->addChild(btnMoney);
 	btnMoney->setScale9Enabled(true);
 	btnMoney->setContentSize(Size(150, 50));
-	btnMoney->setPosition(Point(btnSetting->getPositionX() + btnSetting->getContentSize().width / 2.0f - btnMoney->getContentSize().width / 2.0f,
-		ws.height - btnMoney->getContentSize().height/2.0f - offset/2.0f));
+	/*btnMoney->setPosition(Point(btnSetting->getPositionX() + btnSetting->getContentSize().width / 2.0f - btnMoney->getContentSize().width / 2.0f,
+		ws.height - btnMoney->getContentSize().height / 2.0f - offset / 2.0f));*/
+	btnMoney->setPosition(Point(ws) - Point(0.75*btnMoney->getContentSize()));
 	btnMoney->setTag((int)MyButtonEvent::MONEY);
 	btnMoney->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Sprite *sprCash = Sprite::createWithSpriteFrameName("icon_cash.png");
-	addChild(sprCash);
+	m_frontLayer->addChild(sprCash);
 	sprCash->setPosition(btnMoney->getPosition() + Point(-btnMoney->getContentSize().width / 2.0f + sprCash->getContentSize().width, 0));
 
 	m_lblCash = Label::createWithTTF("00000000", FNT_TTF, 20);
-	addChild(m_lblCash);
+	m_frontLayer->addChild(m_lblCash);
 	m_lblCash->setAnchorPoint(Point(0, 0.5));
-	m_lblCash->setPosition(sprCash->getPosition() + Point(sprCash->getContentSize().width/2.0f + 5, 0));
+	m_lblCash->setPosition(sprCash->getPosition() + Point(sprCash->getContentSize().width / 2.0f + 5, 0));
 
 	Button *btnHeart = GC::gI()->btn()->create("btn_yellow.png");
-	addChild(btnHeart);
+	m_frontLayer->addChild(btnHeart);
 	btnHeart->setScale9Enabled(true);
 	btnHeart->setContentSize(Size(150, 50));
-	btnHeart->setPosition(btnMoney->getPosition() + Point(-btnMoney->getContentSize().width - offset/2.0f, 0));
+	btnHeart->setPosition(btnMoney->getPosition() + Point(-btnMoney->getContentSize().width - offset / 2.0f, 0));
 	btnHeart->setTag((int)MyButtonEvent::HEART);
 	btnHeart->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
 
 	Sprite *sprHeart = Sprite::createWithSpriteFrameName("icon_heart.png");
-	addChild(sprHeart);
+	m_frontLayer->addChild(sprHeart);
 	sprHeart->setPosition(btnHeart->getPosition() + Point(-btnHeart->getContentSize().width / 2.0f + sprHeart->getContentSize().width, 0));
 
 	m_lblHeart = Label::createWithTTF("00000000", FNT_TTF, 20);
-	addChild(m_lblHeart);
+	m_frontLayer->addChild(m_lblHeart);
 	m_lblHeart->setAnchorPoint(Point(0, 0.5));
 	m_lblHeart->setPosition(sprHeart->getPosition() + Point(sprHeart->getContentSize().width / 2.0f + 5, 0));
-
-	Button *btnMail = GC::gI()->btn()->create("btn_gift.png");
-	addChild(btnMail);
-	btnMail->setPosition(Point(offset + btnMail->getContentSize().width, ws.height - btnMail->getContentSize().height/2.0f - btnHeart->getContentSize().height/2.0f));
-	btnMail->setTag((int)MyButtonEvent::MAIL);
-	btnMail->addTouchEventListener(CC_CALLBACK_2(MenuScene::callBackBtn, this));
-
-    GC::gI()->fb()->setDelegate(this);
-	return true;
 }
 
 void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
@@ -185,34 +200,36 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 		MyButtonEvent tag = (MyButtonEvent)btn->getTag();
 		switch (tag)
 		{
-		case MyButtonEvent::SHOP:
+		case MyButtonEvent::SHOP:{
+			m_shopLayer->show();
 			break;
-            case MyButtonEvent::FRIEND: {
-                m_frendListLayer->show();
+		}
+		case MyButtonEvent::FRIEND: {
+			m_frendListLayer->show();
 			break;
-            }
+		}
 		case MyButtonEvent::SETTING:
 			break;
 		case MyButtonEvent::LEADER_BOARD: {
 			m_leaderBoardLayer->show();
 			break;
 		}
-        case MyButtonEvent::WITH_FRIEND:{
-//			for (int i = 0; i < 10; i++){
-//				string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
-//				RemoteSprite *spr = GC::gI()->spr()->createWithURL(str);
-//				spr->setRemoteSpriteCallBack([](bool result) {
-//					if (result) {
-//
-//					} else {
-//
-//					}
-//				});
-//				addChild(spr);
-//				spr->setPosition(Director::getInstance()->getWinSize() / 2.0f);
-//			}
+		case MyButtonEvent::WITH_FRIEND:{
+			//			for (int i = 0; i < 10; i++){
+			//				string str = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p50x50/10676289_429849173841843_222409970973305627_n.jpg?oh=0b8a071934eb28eadaf16f3f7b660a6e&oe=56C621AF&__gda__=1455250957_e3b68bd770a98cba6347c913e70e3785";
+			//				RemoteSprite *spr = GC::gI()->spr()->createWithURL(str);
+			//				spr->setRemoteSpriteCallBack([](bool result) {
+			//					if (result) {
+			//
+			//					} else {
+			//
+			//					}
+			//				});
+			//				addChild(spr);
+			//				spr->setPosition(Director::getInstance()->getWinSize() / 2.0f);
+			//			}
 			break;
-        }
+		}
 		case MyButtonEvent::CREATE_ROOM:
 			break;
 		case MyButtonEvent::JOIN_ROOM: {
@@ -239,9 +256,9 @@ void MenuScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 
 //facebook delegate
 void MenuScene::onAPI(const std::string& tag, const std::string& jsonData) {
-    if(tag.compare(TAG_API_INVITE_FRIEND) == 0) {
-        m_frendListLayer->onReceivedInvitableFriends(jsonData);
-    }
+	if (tag.compare(TAG_API_INVITE_FRIEND) == 0) {
+		m_frendListLayer->onReceivedInvitableFriends(jsonData);
+	}
 }
 
 

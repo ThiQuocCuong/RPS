@@ -5,14 +5,17 @@
 #include "Layer/SelectRoomLayer.h"
 #include "Layer/WaitingRoomLayer.h"
 #include "Layer/LeaderBoardLayer.h"
+#include "Layer/ShopLayer.h"
 #include "GameDelegate.h"
 
 class MenuScene : public cocos2d::Layer, FacebookDelegate, GameDelegate
 {
+	Node *m_frontLayer;
 	FriendListLayer *m_frendListLayer;
 	SelectRoomLayer *m_selectRoomLayer;
 	WaitingRoomLayer *m_waitingRoomLayer;
 	LeaderBoardLayer *m_leaderBoardLayer;
+	ShopLayer *m_shopLayer;
 	cocos2d::Sprite *m_avarta;
 	cocos2d::Label *m_lblUserInfo;
 	cocos2d::Label *m_lblHeart;
@@ -42,6 +45,7 @@ class MenuScene : public cocos2d::Layer, FacebookDelegate, GameDelegate
 public:
 	static cocos2d::Scene* createScene();
 	virtual bool init();
+	void initHeader();
 	CREATE_FUNC(MenuScene);
 };
 
