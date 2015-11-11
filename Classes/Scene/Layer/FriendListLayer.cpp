@@ -31,10 +31,9 @@ bool FriendListLayer::init() {
     m_cellSize = cell->getCellSize();
     m_cellSize.width = 0.9*bg->getContentSize().width;
     
-	for (int i = 0; i < 6; i++) {
-		m_friendModels.pushBack(new FBUserModel());
-		m_friendModels.back()->release();
-	}
+    
+    m_friendModels.pushBack(new FBUserModel());
+    m_friendModels.back()->release();
     
     m_tbw = TableView::create(this, Size(0.9*bg->getContentSize()));
     addChild(m_tbw);
