@@ -8,6 +8,7 @@
 #include "FacebookController.h"
 #include "JsonController.h"
 #include "AnimationController.h"
+#include "smartfox/SmartfoxClient.h"
 #include "../Prefix.h"
 using namespace cocos2d;
 using namespace extension;
@@ -25,6 +26,7 @@ class GC
 	FacebookController *m_fbController;
 	JsonController *m_jsonController;
 	AnimationController *m_animationController;
+	SmartFoxClient *m_sfs2XClient;
 public:
 	static GC *gI();
 	LabelController *lbl();
@@ -34,6 +36,7 @@ public:
 	FacebookController *fb();
 	JsonController *json();
 	AnimationController *anim();
+	SmartFoxClient *sfs2X();
 };
 
 #endif // __HELLOWORLD_SCENE_H__

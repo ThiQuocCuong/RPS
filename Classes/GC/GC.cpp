@@ -14,7 +14,8 @@ m_resourceController(nullptr),
 m_btnController(nullptr),
 m_fbController(nullptr),
 m_jsonController(nullptr),
-m_animationController(nullptr){
+m_animationController(nullptr),
+m_sfs2XClient(nullptr){
 
 }
 
@@ -61,4 +62,11 @@ AnimationController *GC::anim() {
 		m_animationController = new AnimationController();
 	}
 	return m_animationController;
+}
+
+SmartFoxClient *GC::sfs2X() {
+	if (!m_sfs2XClient) {
+		m_sfs2XClient = new SmartFoxClient();
+	}
+	return m_sfs2XClient;
 }

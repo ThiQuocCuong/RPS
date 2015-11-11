@@ -90,6 +90,9 @@ bool LoginScene::init()
 	btnRegister->setTag(TAG_BTN_REGISTER);
 	btnRegister->addTouchEventListener(CC_CALLBACK_2(LoginScene::callBackBtn, this));
 
+	SmartFoxClient::getInstance()->init(SFX2X_DEFAULT_HOST, SFX2X_DEFAULT_PORT, SFX2X_DEFAULT_USERNAME, SFX2X_DEFAULT_PASS, SFX2X_DEFAULT_ZONE, SFX2X_DEFAULT_ROOM, false);
+
+
     return true;
 }
 
@@ -110,7 +113,8 @@ void LoginScene::callBackBtn(Ref *sender, Widget::TouchEventType type) {
 			break;
 		}
 		case TAG_BTN_LOGIN_2:{
-            GC::gI()->fb()->logout();
+			GC::gI()->sfs2X()->login();
+            //GC::gI()->fb()->logout();
 			//Director::getInstance()->replaceScene(GameScene::createScene());
 			break;
 		}
