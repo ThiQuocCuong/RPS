@@ -45,4 +45,28 @@ public:
 	int m_status;
 };
 
+
+enum class ShopItemType {
+	HAT = 0,
+	PAN
+};
+class ShopItemModel: public Ref {
+public:
+	ShopItemModel(ShopItemType type = ShopItemType::HAT,
+				  string id = "",
+				  string name = "",
+				  int cost = 0,
+				  int unit = 0) {
+		m_type = type;
+		m_name = name;
+		m_cost = cost;
+		m_unit = unit;
+	}
+	ShopItemType m_type;
+	string m_id;
+	string m_name;
+	int m_cost;
+	int m_unit;
+};
+
 #endif /* defined(__RPS__FriendListLayer__) */
